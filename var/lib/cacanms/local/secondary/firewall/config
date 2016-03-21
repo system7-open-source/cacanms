@@ -1,0 +1,8 @@
+IPTABLES="echo /sbin/iptables"
+FIREWALL_SEMAPHORE="/home/ego/Desktop/Ego/Projects/cacanms/var/lock/cacanms/local/secondary/firewall"
+LAN_CHAIN_FILE="/home/ego/Desktop/Ego/Projects/cacanms/var/lib/cacanms/local/secondary/firewall/chains/lan.chain"
+ADMIN_CHAIN_FILE="/home/ego/Desktop/Ego/Projects/cacanms/var/lib/cacanms/local/secondary/firewall/chains/admin.chain"
+SECONDARY_CHAIN_FILE="/home/ego/Desktop/Ego/Projects/cacanms/var/lib/cacanms/local/secondary/firewall/chains/secondary.chain"
+INTERNAL_INTERFACE="lo"
+INTERNAL_IP="127.0.0.1"
+LOCAL_NETWORK_ADDRESS="10.0.0.0/8"

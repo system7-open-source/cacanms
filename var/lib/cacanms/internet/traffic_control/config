@@ -1,0 +1,8 @@
+TC="/sbin/tc"
+TRAFFIC_CONTROL_SEMAPHORE="/home/ego/Desktop/Ego/Projects/cacanms/var/lock/cacanms/internet/traffic_control"
+TRAFFIC_CONTROL_RULES_FILE="/home/ego/Desktop/Ego/Projects/cacanms/var/lib/cacanms/internet/firewall/chains/traffic_control.chain"
+TRAFFIC_CONTROL_FILE="/home/ego/Desktop/Ego/Projects/cacanms/var/lib/cacanms/internet/traffic_control/qos.inc.sh"
+INTERNAL_INTERFACE="eth0"
+EXTERNAL_INTERFACE="eth1"
+INTERNAL_IP="10.0.12.5"
+LOCAL_NETWORK_ADDRESS="10.0.0.0/8"

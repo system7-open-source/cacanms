@@ -1,0 +1,17 @@
+;
+; BIND reverse data file for domain 10.in-addr.arpa
+;
+$TTL    7200
+@       IN      SOA     ns1.joint.lan. root.joint.lan. (
+		 2005072301 ; Serial
+			14400           ; Refresh
+			3600            ; Retry
+			3628800         ; Expire
+			7200 )          ; Negative Cache TTL
+														 ;
+@       IN      NS      ns1.joint.lan.
+	IN	NS      ns2.joint.lan.
+;
+;
+$INCLUDE /etc/bind/db.10.in-addr.arpa.inc
+

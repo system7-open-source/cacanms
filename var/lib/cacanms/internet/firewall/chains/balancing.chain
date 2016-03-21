@@ -1,0 +1,3 @@
+/sbin/iptables -t mangle -N BALANCING
+/sbin/iptables -t mangle -A BALANCING -m state --state NEW -j MARKING
+/sbin/iptables -t mangle -A BALANCING -j CONNMARK --restore-mark

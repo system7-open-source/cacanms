@@ -1,0 +1,9 @@
+echo /sbin/iptables -t nat -N secondary
+echo /sbin/iptables -t nat -A secondary -m mac -s 10.0.12.4/32 --mac-source 00:80:45:2A:14:A0  -j ACCEPT
+echo /sbin/iptables -t nat -A secondary -m mac -s 10.0.12.4/32 --mac-source 00:30:4F:2B:59:79  -j ACCEPT
+echo /sbin/iptables -t nat -A secondary -m mac -s 10.0.12.5/32 --mac-source 00:07:95:BE:38:EC  -j ACCEPT
+echo /sbin/iptables -t nat -A secondary -m mac -s 10.0.56.31/32 --mac-source 00:01:02:0D:B2:4C  -j ACCEPT
+echo /sbin/iptables -t nat -A secondary -m mac -s 10.0.56.34/32 --mac-source 00:C0:DF:04:EF:35  -j ACCEPT
+echo /sbin/iptables -t nat -A secondary -m mac -s 10.0.252.1/32 --mac-source 00:0D:60:8E:C7:36  -j ACCEPT
+echo /sbin/iptables -t nat -A secondary -m mac -s 10.0.252.1/32 --mac-source 00:05:4E:45:C9:41  -j ACCEPT
+echo /sbin/iptables -t nat -A secondary -j DROP

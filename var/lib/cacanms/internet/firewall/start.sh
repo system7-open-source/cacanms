@@ -1,0 +1,87 @@
+#
+#Start firewall
+#
+
+EXTERNAL_IP1=192.168.0.1
+EXTERNAL_NET1=192.168.0.0/24
+NET1_MARK=1
+EXTERNAL_IP2=192.168.1.1
+EXTERNAL_NET2=192.168.1.0/24
+NET2_MARK=2
+
+ # USER CHAINS
+ #
+  source $MARKING_CHAIN_FILE
+  source $BALANCING_CHAIN_FILE
+  source $ADMIN_CHAIN_FILE
+  source $INET_CHAIN_FILE
+  source $LAN_CHAIN_FILE
+  source $NOINET_CHAIN_FILE
+  source $SECONDARY_CHAIN_FILE
+  source $UINET_CHAIN_FILE
+  
+ # General policies
+  $IPTABLES -t nat -P PREROUTING DROP
+
+ # Blocking invalid datagrams
+   $IPTABLES -m state -A INPUT --state INVALID -j DROP
+   $IPTABLES -m state -A FORWARD --state INVALID -j DROP
+
+ # connmark
+ $IPTABLES -A PREROUTING -t mangle -i eth1 -d $EXTERNAL_NET1 -j CONNMARK --set-mark $NET1_MARK
+ $IPTABLES -A PREROUTING -t mangle -i eth1 -d $EXTERNAL_NET2 -j CONNMARK --set-mark $NET2_MARK
+
+ # blocking spoofers
+ #
+  $IPTABLES -A INPUT -i $EXTERNAL_INTERFACE -s 10.0.0.0/8 -d 0.0.0.0/0 -j DROP
+  $IPTABLES -A INPUT -i $EXTERNAL_INTERFACE -s 172.16.0.0/12 -d 0.0.0.0/0 -j DROP
+  $IPTABLES -A INPUT -i $EXTERNAL_INTERFACE -s 192.168.0.0/16 -d 0.0.0.0/0 -j DROP
+  $IPTABLES -A FORWARD -i $EXTERNAL_INTERFACE -s 10.0.0.0/8 -d 0.0.0.0/0 -j DROP
+  $IPTABLES -A FORWARD -i $EXTERNAL_INTERFACE -s 172.16.0.0/12 -d 0.0.0.0/0 -j DROP
+  $IPTABLES -A FORWARD -i $EXTERNAL_INTERFACE -s 192.168.0.0/16 -d 0.0.0.0/0 -j DROP
+
+ # blocking access to "private" IP addresses
+ #
+  $IPTABLES -A INPUT -i $EXTERNAL_INTERFACE -s 0.0.0.0/0 -d 172.16.0.0/12 -j DROP
+  $IPTABLES -A INPUT -i $EXTERNAL_INTERFACE -s 0.0.0.0/0 -d 192.168.0.0/16 -j DROP
+  $IPTABLES -A FORWARD -i $EXTERNAL_INTERFACE -s 0.0.0.0/0 -d 172.16.0.0/12 -j DROP
+  $IPTABLES -A FORWARD -i $EXTERNAL_INTERFACE -s 0.0.0.0/0 -d 192.168.0.0/16 -j DROP
+  
+ $IPTABLES -t nat -A PREROUTING -m state --state RELATED -j ACCEPT
+
+
+ # Connections to the server 
+ #
+  # SSH
+   $IPTABLES -t nat -A PREROUTING -p tcp -i $INTERNAL_INTERFACE -d $INTERNAL_IP --dport 22 -j admin
+
+
+  # DNS
+   $IPTABLES -t nat -A PREROUTING -p tcp -i $INTERNAL_INTERFACE -s $LOCAL_NETWORK_ADDRESS -d $INTERNAL_IP --dport 53 -j ACCEPT
+   $IPTABLES -t nat -A PREROUTING -p udp -i $INTERNAL_INTERFACE -s $LOCAL_NETWORK_ADDRESS -d $INTERNAL_IP --dport 53 -j ACCEPT
+   $IPTABLES -t nat -A PREROUTING -p tcp -i $EXTERNAL_INTERFACE -s 0.0.0.0/0 --dport 53 -j ACCEPT
+   $IPTABLES -t nat -A PREROUTING -p udp -i $EXTERNAL_INTERFACE -s 0.0.0.0/0 --dport 53 -j ACCEPT
+
+  # SQUID icpv2 
+   $IPTABLES -t nat -A PREROUTING -p udp -i $EXTERNAL_INTERFACE -s 0.0.0.0/0 --dport 3130 -j ACCEPT
+  $IPTABLES -t nat -A PREROUTING -p tcp -i $INTERNAL_INTERFACE -s $LOCAL_NETWORK_ADDRESS -d $INTERNAL_IP --dport 3128 -j inet
+  
+# Internet Access Granted checkpoint
+ $IPTABLES -t nat -A PREROUTING -i $INTERNAL_INTERFACE -s $LOCAL_NETWORK_ADDRESS -d ! $LOCAL_NETWORK_ADDRESS -j inet
+  
+# LOAD-BALANCING 
+ $IPTABLES -A PREROUTING -t mangle -i eth0 -s 10.0.0.0/8 -d ! 10.0.0.0/8 -j BALANCING
+ $IPTABLES -A OUTPUT -t mangle -d ! 10.0.0.0/8 -j BALANCING
+   
+ $IPTABLES -t mangle -A FORWARD -j CONNMARK --restore-mark
+ $IPTABLES -t mangle -A OUTPUT -j CONNMARK --restore-mark
+
+ $IPTABLES -t mangle -A PREROUTING -m connmark --mark 0
+ $IPTABLES -t mangle -A FORWARD -m connmark --mark 0
+
+ source $TRAFFIC_CONTROL_RULES_FILE
+
+ source $SNAT_RULES_FILE
+
+ $IPTABLES -A POSTROUTING -t nat -o eth1 -d ! 10.0.0.0/8 -m connmark --mark $NET1_MARK -j SNAT --to-source $EXTERNAL_IP1
+ $IPTABLES -A POSTROUTING -t nat -o eth1 -d ! 10.0.0.0/8 -m connmark --mark $NET2_MARK -j SNAT --to-source $EXTERNAL_IP2

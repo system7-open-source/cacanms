@@ -1,0 +1,8 @@
+/sbin/iptables -t mangle -N MARKING
+/sbin/iptables -t mangle -A MARKING -j CONNMARK --restore-mark
+# for "dsl1" link:
+/sbin/iptables -t mangle -A MARKING -m connmark ! --mark 0 -j RETURN
+/sbin/iptables -t mangle -A MARKING -m nth --counter 8 --every 2 --packet 0 -j CONNMARK --set-mark 1
+# for "dsl2" link:
+/sbin/iptables -t mangle -A MARKING -m connmark ! --mark 0 -j RETURN
+/sbin/iptables -t mangle -A MARKING -m nth --counter 8 --every 2 --packet 1 -j CONNMARK --set-mark 2

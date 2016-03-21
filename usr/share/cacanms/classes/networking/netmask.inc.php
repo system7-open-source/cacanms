@@ -1,0 +1,61 @@
+<?
+/*   Copyright (C) Tomasz J. Kotarba, 2004
+ *
+ *   Do you want to contact me? I live in Cracow/Poland/EU so unless
+ *   you live in this lovely and ancient city, you will most likely want to
+ *   send me an e-mail... here is the address:
+ *
+ *   Tomasz J. Kotarba <tomasz@kotarba.net>
+ *
+ *
+ *   This file is part of CACANMS.
+ *   
+ *   CACANMS is free software; you can redistribute it and/or modify
+ *   it under the terms of the GNU General Public License as published by
+ *   the Free Software Foundation; either version 2 of the License, or
+ *   (at your option) any later version.
+ *   
+ *   CACANMS is distributed in the hope that it will be useful,
+ *   but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *   GNU General Public License for more details.
+ *   
+ *   You should have received a copy of the GNU General Public License
+ *   along with CACANMS; if not, write to the Free Software
+ *   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+*/
+require_once 'ip.inc.php';
+
+class Netmask extends IP
+{
+ function Netmask($in_netmask='0.0.0.0')
+ {
+  parent::IP($in_netmask);
+  Netmask::Validate();
+ }
+ 
+ function Validate()
+ {
+  $check=1;
+  $only_zero_so_far=true;
+
+  for($i=0;$i<32;$i++)
+  {
+   $tmp=$this->address & $check;
+
+   if($tmp!=0)
+   {
+    if($only_zero_so_far)
+     $only_zero_so_far=false;
+   }
+   else
+   {
+    if(!$only_zero_so_far)
+     exit('Error! "'.parent::to_String().'" is not a valid netmask!'."\n");
+   }
+
+   $check <<= 1;
+  }
+ }
+}
+?>

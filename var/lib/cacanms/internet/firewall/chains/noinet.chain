@@ -1,0 +1,7 @@
+/sbin/iptables -t nat -N noinet
+/sbin/iptables -t nat -A noinet -m mac -s 10.0.44.29/32 --mac-source 00:30:4F:2C:23:7E -i eth0 -p tcp --dport 80 -j REDIRECT --to-port 1234
+/sbin/iptables -t nat -A noinet -m mac -s 10.0.68.3/32 --mac-source 00:40:F4:79:CE:0D -i eth0 -p tcp --dport 80 -j REDIRECT --to-port 1234
+/sbin/iptables -t nat -A noinet -m mac -s 10.0.56.3/32 --mac-source 00:30:4F:1D:B7:B9 -i eth0 -p tcp --dport 80 -j REDIRECT --to-port 1234
+/sbin/iptables -t nat -A noinet -m mac -s 10.0.72.12/32 --mac-source 00:11:1E:00:0C:8F -i eth0 -p tcp --dport 80 -j REDIRECT --to-port 1234
+/sbin/iptables -t nat -A noinet -m mac -s 10.0.12.27/32 --mac-source 00:30:4F:2F:F9:DC -i eth0 -p tcp --dport 80 -j REDIRECT --to-port 1234
+/sbin/iptables -t nat -A noinet -m mac -s 10.0.64.4/32 --mac-source 00:A0:24:9B:51:B2 -i eth0 -p tcp --dport 80 -j REDIRECT --to-port 1234

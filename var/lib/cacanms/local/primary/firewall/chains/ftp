@@ -1,0 +1,20 @@
+$IPTABLES -t nat -N ftp
+#lilu
+$IPTABLES -t nat -A ftp -s 80.55.194.93/32 -j ACCEPT
+$IPTABLES -t nat -A ftp -s 80.48.28.6/32 -j ACCEPT
+$IPTABLES -t nat -A ftp -s 80.48.28.16/32 -j ACCEPT
+$IPTABLES -t nat -A ftp -s 156.17.6.193/32 -j ACCEPT
+$IPTABLES -t nat -A ftp -s 156.17.71.96/32 -j ACCEPT
+
+#dariusz
+$IPTABLES -t nat -A ftp -s 62.111.187.194 -j ACCEPT
+
+#transprojekt
+$IPTABLES -t nat -A ftp -s 195.205.24.253 -j ACCEPT
+
+$IPTABLES -t nat -A ftp -s orion.joint.lan -j ACCEPT
+$IPTABLES -t nat -A ftp -s whoop.joint.lan -j ACCEPT
+$IPTABLES -t nat -A ftp -s air.joint.lan -j ACCEPT
+
+
+$IPTABLES -t nat -A ftp -j DROP

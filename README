@@ -1,0 +1,287 @@
+/*   Copyright (C) Tomasz J. Kotarba, 2004
+ *
+ *   Tomasz J. Kotarba <tomasz@kotarba.net>
+ *
+ *
+ *   This file is part of CACANMS.
+ *   
+ *   CACANMS is free software; you can redistribute it and/or modify
+ *   it under the terms of the GNU General Public License as published by
+ *   the Free Software Foundation; either version 2 of the License, or
+ *   (at your option) any later version.
+ *   
+ *   CACANMS is distributed in the hope that it will be useful,
+ *   but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *   GNU General Public License for more details.
+ *   
+ *   You should have received a copy of the GNU General Public License
+ *   along with CACANMS; if not, write to the Free Software
+ *   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+ */
+
+ 
+ 
+TABLE OF CONTENTS
+ INTRODUCTION
+  I. What is CACANMS
+  II. Does it work
+  III. What can it do for you
+  IV. Subsystems
+  V. Intended Audience
+ GETTING STARTED
+  I. If you want to set up 'Primary Local Server'
+  II. If you want to set up 'Secondary Local Server'
+  III. If you want to set up 'Internet Server'
+  IV. If you want to use 'netcheck'
+ BASIC INFORMATION
+  I. Network Definition File
+   I.1. Network Record
+   I.2. Host Record
+   I.3. Host Flags
+   I.4. Adding New Hosts to a Network Definition File
+  II. ISP Contracts
+   II.1. ISP Contract Status
+   II.2. Internet Access Flags
+ MORE INFORMATION
+
+
+
+
+
+INTRODUCTION
+
+I. What is CACANMS
+CACANMS is an acronym for Computer Aided Campus Area Network Management System. The system is a set of a few dozen software components and a library of about 60 useful classes (written in PHP4). It is divided into three different types of subsystems which, typically, reside on different servers and communicate with each other. CACANMS was created to serve me in a specific real-life network but it is fairly universal as its components are meant to be customized by system administrators to fully suit their needs.
+
+
+II. Does it work
+Yes it does. It was successfully deployed in a network I was managing for almost five years. Some information about the network:
+- several hundred machines
+- more than 20 buildings
+- few dozen kilometres of cabling (fiber-optics and (S|F|U)TP)
+- two independent Internet Servers
+- three internet links (traffic control and QoS, load-balancing, internet link failure detection and failover)
+- one Primary Local Server
+- one Secondary Local Server
+- many different servers: IRC, WWW, FTP, Jabber, samba, Direct Connect, proxy etc.. 
+
+
+III. What can it do for you
+You can use the system working either in batch or interactive mode. It can help you in administering your computer network. It facilitates:
+ - Local Network Management
+   - keeping an up-to-date database of all hosts connected to your network
+   - monitoring whether (and when) your hosts are turned on
+   - generating DNS entries for your local DNS zone (for each host)
+   - controlling access to a chosen server services by performing basic IP and MAC based authentication
+   - performing an assignment of IP addresses to all new hosts
+   - generating DHCP daemon configuration files
+   - generating firewall rules
+   - keeping track of changes to the hosts database etc.
+   - propagation of hosts database changes to other servers
+   - restarting all relevant services on all chosen servers when a change to the hosts database is detected  
+   - and more
+ - Internet Links and Access Control Management
+   - assigning default routers on a per host basis
+   - generating DNS entries for your public DNS domain (for each host that has been assigned its own "public" IP address)
+   - granting internet access to a chosen hosts based on their IP and MAC addresses
+   - load-balancing and traffic control
+   - monitoring status of all (or some) internet links
+   - generating firewall and TC rules for all hosts
+   - and more
+  
+   
+IV. Subsystems
+There are three types of subsystems (communicating with each other) that you can use:
+
+- CACANMS for Primary Local Server (mandatory)
+  Primary local server hosts the most important part of CACANMS system. It must be installed and running for other subsystems to function properly. Its most essential component is a local network definition database which stores information about all computers connected to a network. Primary local server serves DHCP requests from clients, assigns IPs and default routers etc.. The other CACANMS servers (secondary or internet) are informed of every modification of network definition database so they can update their local copies of the database as soon as possible.
+  
+- CACANMS for Secondary Local Server (optional)
+  Secondary local servers are hosts which have been granted a proper access level to the primary server. They act mainly as backup servers. Secondary servers are optional and there may be none as well as many of them connected to a given network. 
+  
+- CACANMS for Internet Server (optional)
+  Internet servers grants internet access to chosen hosts and denies it to others (based on so called 'ISP Contracts'). Internet servers have one or more "internet links" connected to them. They provide load-balancing and failover, traffic control and QoS, DNS service, web proxy service etc.. Typically Primary server treats internet server as a secondary server and sets its IP as a default router for chosen hosts (using DHCP). Internet servers are optional. There is no restriction on number of internet servers connected to the same local network (i.e. there can be many different ISPs (Internet Service Providers) offering their services using the same local network). 
+
+Additionally there exists one more executable component - netcheck.php. It probes network for hosts activity and displays results on a screen or logs them to a chosen file. It uses the local network definition database so it is installed together with one (or more) of the above mentioned subsystems.
+
+
+V. Intended Audience
+CACANMS is intended for ADVANCED system administrators and only they can harness its full potential.
+Some parts of CACANMS (e.g. CACANMS for Primary Local Server) may be used by beginners (and by 'beginners' I mean system administrators who know how to manage their systems at least to netfilter/iptables level).
+
+
+
+GETTING STARTED
+
+A working CACANMS system can be build from the following subsystems:
+- one 'CACANMS for Primary Local Server' system
+- [optional] CACANMS for Secondary Local Server (0..n servers)
+- [optional] CACANMS for Internet Server (0..n servers)
+If you do not understand instructions that follow, try to acquiant yourself with 'BASIC INFORMATION'.
+
+
+I. If you want to set up 'Primary Local Server'
+- edit the appropriate config.inc.php file and follow the instructions you can find there (e.g. /etc/cacanms/local/primary/config.inc.php)
+- make your network definition file (see: 'I. Network Definition File')
+- learn to use generated rules and chains and customize Primary Local Server firewall files (at least 'start.sh')
+- [optional] configure your http daemon (if you want to publish files for use by secondary and/or internet servers)
+- [optional] symlink cacanms_lp.php to something convenient (e.g. ln -s /usr/bin/cacanms_lp.php /usr/bin/cacanms) 
+- execute 'cacanms_lp.php all' (or use the optional symlink you created above)
+
+
+II. If you want to set up 'Secondary Local Server'
+- edit the appropriate config.inc.php file and follow the instructions you can find there
+- [optional] symlink cacanms_ls.php to something convenient (e.g. ln -s /usr/bin/cacanms_ls.php /usr/bin/cacanms) 
+- execute 'cacanms_ls.php all' (or use the optional symlink you created above)
+
+
+III. If you want to set up 'Internet Server'
+- edit the appropriate config.inc.php file and follow the instructions you can find there
+- configure your external interface and routing (e.g. using 'iproute' software)
+- customize firewall.php and traffic_control.php components
+- learn to use generated rules and chains and customize Primary Local Server firewall files (at least 'start.sh')
+- make your ISP Contracts database
+- [optional] symlink cacanms_i.php to something convenient (e.g. ln -s /usr/bin/cacanms_i.php /usr/bin/cacanms) 
+- execute 'cacanms_i.php all' (or use the optional symlink you created above)
+
+
+IV. If you want to use 'netcheck'
+- set up some type of CACANMS server (see above)
+- edit netcheck configuration file  and follow the instructions you can find there
+
+
+
+BASIC INFORMATION
+I. Network Definition File
+
+A Network Definition File is a text file that consists of the following two types of records:
+- network records
+- host records
+
+
+I.1. Network Record
+
+A network record must contain at least two lines:
+- the first line contains network name and network address in CIDR notation
+- the last line denotes the end of a given network and contains only two slashes ('/' character)
+
+The exact format of both lines is shown below:
+
+//network_name//network_CIDR
+//
+
+Empty network example:
+//My Network//10.0.0.0/8
+//
+
+Network records can contain either other network records or host records (i.e. if a network is divided into subnetworks, only subnetworks being leaves may contain host records).
+A record is contained in a network record if it lies between its first and its last line and is not contained in any other network record.
+
+
+I.2. Host Record
+Host record is a single line containing the following fields (separated by whitespaces):
+- a hostname (must be unique)
+- at least one MAC address (if more than one - use comma as a separator)
+- one IP address (or '-' (minus) character (see: 'I.4. Adding New Hosts to Network Definition File')) 
+- host flags (see: 'I.3. Host Flags')
+- a location (used by 'netcheck'; use this field to the best of your advantage)
+- a date (use it to the best of your advantage)
+
+The exact format of the host record line is shown below:
+hostname	MAC1[,MAC2,...]	IP_address	host_flags	location	date
+
+Below you can find an example of a network containing two subnetworks (pay attention to network addresses):
+
+//main_network//10.0.0.0/8
+//9//10.0.4.0/24
+amd                  00:30:4F:16:FD:59	10.0.4.1	-	1	9	2002-12-01
+ania                 00:50:BA:31:22:BA	10.0.4.2	A8	1	9	2002-12-01
+fides                00:80:1E:13:12:88	10.0.4.3	-	2	9	2004-02-01
+leon                 00:0C:6E:90:DE:04	10.0.4.9	-	1	9	2004-01-21
+misiek               00:30:4F:39:95:6B	10.0.4.4	-	1	9	2020-11-01
+silje                00:02:A5:08:AC:85	10.0.4.5	9	1	9	2002-12-01
+ulala                00:D0:09:E8:80:67	10.0.4.7	-	1	9	2002-12-01
+young-gotti          00:0D:61:B1:37:92,00:02:A5:08:AC:85	10.0.4.8	-	1	9	2002-12-01
+//
+//15a//10.0.8.0/24
+adul                 00:E0:4C:BB:21:0A	10.0.8.36	-	1	15a	2004-04-15
+//
+//
+
+
+I.3. Host Flags
+The following host flags has been defined for Host_Flags class (see: host_flags.inc.php):
+- administrative access	- A - add this host to admin netfilter chain (local servers only! internet servers ignore it and use $administrators array instead)
+- access level 		- from 0 to 9 (attribute set to null if no digit is present)
+- no dns		- D - do not generate DNS entry on local servers (internet servers ignore it)
+- no revdns		- R - do not generate reverse DNS entry on local servers (internet servers ignore it)
+- no firewall		- F - do not generate firewall rules on local servers (internet servers ignore it)
+- no tc			- Q - reserved for future use
+- no dhcp		- H - do not generate DHCP entries for this host (local servers only! internet servers ignore it)
+
+You should grant Secondary and Internet Servers access level 9 (unles you want to change it of course).
+
+ 
+I.4. Adding New Hosts to Network Definition File
+- execute 'cacanms_lp.php edit'
+- add a new line to the appropriate [sub]network record
+- fill the line with all necessary information (see: 'Host record')
+  - if you want CACANMS to assign IP address automatically, insert a minus character instead of an address 
+- execute 'cacanms_lp.php all' to assign IP addresses, regenerate all files and restart all relevant services (see: 'cacanms_lp.php help' for details)
+
+
+II. ISP Contracts
+Each contracts obliges ISP to grant its client's host internet access on condition specified in the contract. ISP Contracts are stored on Internet Servers in a simple ASCII file. Each contract occupies a separate line. Here is the line format:
+
+hostname	status	internet_access_flags	ILAs_strings	date
+
+where:
+
+hostname		- stores a hostname of a host the contract applies to (the same entry must exist in the local network definition database).
+status			- stores a status of the contract (see 'II.1. ISP Contract Status').
+internet_access_flags	- see 'II.2. Internet Access Flags'.
+ILAs_strings		- stores textual strings for each Internet Link Acces type the host has been granted the access to (see config.inc.php file).
+date			- stores a Date class object representing a date the contract becomes effective (or expires - you can use it as you want).
+
+ISP Contracts file example:
+connrad                  OPERATIVE P                                  fast1,fast2		2002-12-01
+d800                     OPERATIVE P                                  fast1,fast2		2004-10-04
+dagny                    SUSPENDED P                                  fast1,fast2		2004-03-01
+daniel                   OPERATIVE -                                  fast1,fast2		2002-12-01
+danielu                  OPERATIVE P                                  fast1,fast2		2003-09-01
+daqu                     OPERATIVE P                                  fast1,fast2		2002-12-01
+deck                     OPERATIVE P9                                 fast1,fast2		2020-12-01
+demek                    OPERATIVE PM1                                fast1,fast2		2002-12-01
+demostenes               OPERATIVE P                                  fast1,fast2		2003-01-01
+domingo                  OPERATIVE P                                  fast1,fast2		2002-12-01
+dorota                   OPERATIVE P                                  fast1,fast2		2003-04-01
+dudeq                    CANCELED  P                                  fast1,fast2		2002-12-01
+england                  OPERATIVE P                                  fast1withIP		2003-08-01
+
+
+II.1. ISP Contract Status
+Each ISP Contract can either be OPERATIVE, SUSPENDED or CANCELED.
+- OPERATIVE	- only contracts marked as OPERATIVE are taken into account when firewall rules are generated 
+- SUSPENDED	- such contract is ignored during generation of firewall rules granting hosts internet access
+- CANCELED	- see above
+
+
+II.2. Internet Access Flags
+The flags are not used in this generic version of CACANMS. Use them to the best of your advantage while customising components (or creating new).
+
+The following internet access flags have been defined:
+
+- proxy access	- P
+- mail access	- M
+- no DNS access	- N
+- access level	- 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 (if no digit is present, access_level attribute is set to null - see internet_access_flags.inc.php)
+
+Use - (minus sign) if no flag is to be set.
+
+
+
+MORE INFORMATION
+1. Read all comments in all config.inc.php files.
+2. Read a source code of a given component or class.
+3. In case of problems - e-mail me (tomasz(at)kotarba.net).

@@ -1,0 +1,12 @@
+/sbin/iptables -t nat -N admin
+/sbin/iptables -t nat -A admin -m mac -s 10.0.12.4/32 --mac-source 00:80:45:2A:14:A0  -j ACCEPT
+/sbin/iptables -t nat -A admin -m mac -s 10.0.12.4/32 --mac-source 00:30:4F:2B:59:79  -j ACCEPT
+/sbin/iptables -t nat -A admin -m mac -s 10.0.12.5/32 --mac-source 00:07:95:BE:38:EC  -j ACCEPT
+/sbin/iptables -t nat -A admin -m mac -s 10.0.12.28/32 --mac-source 00:03:47:92:67:49  -j ACCEPT
+/sbin/iptables -t nat -A admin -m mac -s 10.0.16.4/32 --mac-source 00:04:76:E5:0D:75  -j ACCEPT
+/sbin/iptables -t nat -A admin -m mac -s 10.0.16.20/32 --mac-source 00:D0:09:EA:0C:A6  -j ACCEPT
+/sbin/iptables -t nat -A admin -m mac -s 10.0.16.19/32 --mac-source 00:10:4B:23:57:E7  -j ACCEPT
+/sbin/iptables -t nat -A admin -m mac -s 10.0.20.5/32 --mac-source 00:30:4F:29:CE:F1  -j ACCEPT
+/sbin/iptables -t nat -A admin -m mac -s 10.0.252.1/32 --mac-source 00:0D:60:8E:C7:36  -j ACCEPT
+/sbin/iptables -t nat -A admin -m mac -s 10.0.252.1/32 --mac-source 00:05:4E:45:C9:41  -j ACCEPT
+/sbin/iptables -t nat -A admin -j DROP

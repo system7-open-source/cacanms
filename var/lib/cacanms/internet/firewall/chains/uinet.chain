@@ -1,0 +1,2 @@
+/sbin/iptables -t nat -N uinet
+/sbin/iptables -t nat -A uinet -j DROP

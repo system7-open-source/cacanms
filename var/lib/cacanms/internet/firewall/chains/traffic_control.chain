@@ -1,0 +1,740 @@
+# host: abyss (link: dsl1)
+/sbin/iptables -t mangle -A POSTROUTING -o eth0 -d 10.0.28.1 -m connmark --mark 1 -m length --length :160 -j CLASSIFY --set-class 1:104
+/sbin/iptables -t mangle -A POSTROUTING -o eth0 -d 10.0.28.1 -m connmark --mark 1 -m length --length 160: -j CLASSIFY --set-class 1:105
+/sbin/iptables -t mangle -A POSTROUTING -o eth1 -d 10.0.28.1 -m connmark --mark 1 -m length --length :160 -j CLASSIFY --set-class 1:104
+/sbin/iptables -t mangle -A POSTROUTING -o eth1 -d 10.0.28.1 -m connmark --mark 1 -m length --length 160: -j CLASSIFY --set-class 1:105
+# host: abyss (link: dsl2)
+/sbin/iptables -t mangle -A POSTROUTING -o eth0 -d 10.0.28.1 -m connmark --mark 2 -m length --length :160 -j CLASSIFY --set-class 1:107
+/sbin/iptables -t mangle -A POSTROUTING -o eth0 -d 10.0.28.1 -m connmark --mark 2 -m length --length 160: -j CLASSIFY --set-class 1:108
+/sbin/iptables -t mangle -A POSTROUTING -o eth1 -d 10.0.28.1 -m connmark --mark 2 -m length --length :160 -j CLASSIFY --set-class 1:107
+/sbin/iptables -t mangle -A POSTROUTING -o eth1 -d 10.0.28.1 -m connmark --mark 2 -m length --length 160: -j CLASSIFY --set-class 1:108
+# host: adam (link: dsl1)
+/sbin/iptables -t mangle -A POSTROUTING -o eth0 -d 10.0.20.17 -m connmark --mark 1 -m length --length :160 -j CLASSIFY --set-class 1:110
+/sbin/iptables -t mangle -A POSTROUTING -o eth0 -d 10.0.20.17 -m connmark --mark 1 -m length --length 160: -j CLASSIFY --set-class 1:111
+/sbin/iptables -t mangle -A POSTROUTING -o eth1 -d 10.0.20.17 -m connmark --mark 1 -m length --length :160 -j CLASSIFY --set-class 1:110
+/sbin/iptables -t mangle -A POSTROUTING -o eth1 -d 10.0.20.17 -m connmark --mark 1 -m length --length 160: -j CLASSIFY --set-class 1:111
+# host: adam (link: dsl2)
+/sbin/iptables -t mangle -A POSTROUTING -o eth0 -d 10.0.20.17 -m connmark --mark 2 -m length --length :160 -j CLASSIFY --set-class 1:113
+/sbin/iptables -t mangle -A POSTROUTING -o eth0 -d 10.0.20.17 -m connmark --mark 2 -m length --length 160: -j CLASSIFY --set-class 1:114
+/sbin/iptables -t mangle -A POSTROUTING -o eth1 -d 10.0.20.17 -m connmark --mark 2 -m length --length :160 -j CLASSIFY --set-class 1:113
+/sbin/iptables -t mangle -A POSTROUTING -o eth1 -d 10.0.20.17 -m connmark --mark 2 -m length --length 160: -j CLASSIFY --set-class 1:114
+# host: adul (link: dsl1)
+/sbin/iptables -t mangle -A POSTROUTING -o eth0 -d 10.0.8.36 -m connmark --mark 1 -m length --length :160 -j CLASSIFY --set-class 1:116
+/sbin/iptables -t mangle -A POSTROUTING -o eth0 -d 10.0.8.36 -m connmark --mark 1 -m length --length 160: -j CLASSIFY --set-class 1:117
+/sbin/iptables -t mangle -A POSTROUTING -o eth1 -d 10.0.8.36 -m connmark --mark 1 -m length --length :160 -j CLASSIFY --set-class 1:116
+/sbin/iptables -t mangle -A POSTROUTING -o eth1 -d 10.0.8.36 -m connmark --mark 1 -m length --length 160: -j CLASSIFY --set-class 1:117
+# host: adul (link: dsl2)
+/sbin/iptables -t mangle -A POSTROUTING -o eth0 -d 10.0.8.36 -m connmark --mark 2 -m length --length :160 -j CLASSIFY --set-class 1:119
+/sbin/iptables -t mangle -A POSTROUTING -o eth0 -d 10.0.8.36 -m connmark --mark 2 -m length --length 160: -j CLASSIFY --set-class 1:120
+/sbin/iptables -t mangle -A POSTROUTING -o eth1 -d 10.0.8.36 -m connmark --mark 2 -m length --length :160 -j CLASSIFY --set-class 1:119
+/sbin/iptables -t mangle -A POSTROUTING -o eth1 -d 10.0.8.36 -m connmark --mark 2 -m length --length 160: -j CLASSIFY --set-class 1:120
+# host: agnieszka (link: dsl1)
+/sbin/iptables -t mangle -A POSTROUTING -o eth0 -d 10.0.68.2 -m connmark --mark 1 -m length --length :160 -j CLASSIFY --set-class 1:122
+/sbin/iptables -t mangle -A POSTROUTING -o eth0 -d 10.0.68.2 -m connmark --mark 1 -m length --length 160: -j CLASSIFY --set-class 1:123
+/sbin/iptables -t mangle -A POSTROUTING -o eth1 -d 10.0.68.2 -m connmark --mark 1 -m length --length :160 -j CLASSIFY --set-class 1:122
+/sbin/iptables -t mangle -A POSTROUTING -o eth1 -d 10.0.68.2 -m connmark --mark 1 -m length --length 160: -j CLASSIFY --set-class 1:123
+# host: agnieszka (link: dsl2)
+/sbin/iptables -t mangle -A POSTROUTING -o eth0 -d 10.0.68.2 -m connmark --mark 2 -m length --length :160 -j CLASSIFY --set-class 1:125
+/sbin/iptables -t mangle -A POSTROUTING -o eth0 -d 10.0.68.2 -m connmark --mark 2 -m length --length 160: -j CLASSIFY --set-class 1:126
+/sbin/iptables -t mangle -A POSTROUTING -o eth1 -d 10.0.68.2 -m connmark --mark 2 -m length --length :160 -j CLASSIFY --set-class 1:125
+/sbin/iptables -t mangle -A POSTROUTING -o eth1 -d 10.0.68.2 -m connmark --mark 2 -m length --length 160: -j CLASSIFY --set-class 1:126
+# host: andromeda (link: dsl1)
+/sbin/iptables -t mangle -A POSTROUTING -o eth0 -d 10.0.52.3 -m connmark --mark 1 -m length --length :160 -j CLASSIFY --set-class 1:128
+/sbin/iptables -t mangle -A POSTROUTING -o eth0 -d 10.0.52.3 -m connmark --mark 1 -m length --length 160: -j CLASSIFY --set-class 1:129
+/sbin/iptables -t mangle -A POSTROUTING -o eth1 -d 10.0.52.3 -m connmark --mark 1 -m length --length :160 -j CLASSIFY --set-class 1:128
+/sbin/iptables -t mangle -A POSTROUTING -o eth1 -d 10.0.52.3 -m connmark --mark 1 -m length --length 160: -j CLASSIFY --set-class 1:129
+# host: andromeda (link: dsl2)
+/sbin/iptables -t mangle -A POSTROUTING -o eth0 -d 10.0.52.3 -m connmark --mark 2 -m length --length :160 -j CLASSIFY --set-class 1:131
+/sbin/iptables -t mangle -A POSTROUTING -o eth0 -d 10.0.52.3 -m connmark --mark 2 -m length --length 160: -j CLASSIFY --set-class 1:132
+/sbin/iptables -t mangle -A POSTROUTING -o eth1 -d 10.0.52.3 -m connmark --mark 2 -m length --length :160 -j CLASSIFY --set-class 1:131
+/sbin/iptables -t mangle -A POSTROUTING -o eth1 -d 10.0.52.3 -m connmark --mark 2 -m length --length 160: -j CLASSIFY --set-class 1:132
+# host: anka (link: dsl1)
+/sbin/iptables -t mangle -A POSTROUTING -o eth0 -d 10.0.76.1 -m connmark --mark 1 -m length --length :160 -j CLASSIFY --set-class 1:134
+/sbin/iptables -t mangle -A POSTROUTING -o eth0 -d 10.0.76.1 -m connmark --mark 1 -m length --length 160: -j CLASSIFY --set-class 1:135
+/sbin/iptables -t mangle -A POSTROUTING -o eth1 -d 10.0.76.1 -m connmark --mark 1 -m length --length :160 -j CLASSIFY --set-class 1:134
+/sbin/iptables -t mangle -A POSTROUTING -o eth1 -d 10.0.76.1 -m connmark --mark 1 -m length --length 160: -j CLASSIFY --set-class 1:135
+# host: anka (link: dsl2)
+/sbin/iptables -t mangle -A POSTROUTING -o eth0 -d 10.0.76.1 -m connmark --mark 2 -m length --length :160 -j CLASSIFY --set-class 1:137
+/sbin/iptables -t mangle -A POSTROUTING -o eth0 -d 10.0.76.1 -m connmark --mark 2 -m length --length 160: -j CLASSIFY --set-class 1:138
+/sbin/iptables -t mangle -A POSTROUTING -o eth1 -d 10.0.76.1 -m connmark --mark 2 -m length --length :160 -j CLASSIFY --set-class 1:137
+/sbin/iptables -t mangle -A POSTROUTING -o eth1 -d 10.0.76.1 -m connmark --mark 2 -m length --length 160: -j CLASSIFY --set-class 1:138
+# host: anton (link: dsl1)
+/sbin/iptables -t mangle -A POSTROUTING -o eth0 -d 10.0.64.2 -m connmark --mark 1 -m length --length :160 -j CLASSIFY --set-class 1:140
+/sbin/iptables -t mangle -A POSTROUTING -o eth0 -d 10.0.64.2 -m connmark --mark 1 -m length --length 160: -j CLASSIFY --set-class 1:141
+/sbin/iptables -t mangle -A POSTROUTING -o eth1 -d 10.0.64.2 -m connmark --mark 1 -m length --length :160 -j CLASSIFY --set-class 1:140
+/sbin/iptables -t mangle -A POSTROUTING -o eth1 -d 10.0.64.2 -m connmark --mark 1 -m length --length 160: -j CLASSIFY --set-class 1:141
+# host: anton (link: dsl2)
+/sbin/iptables -t mangle -A POSTROUTING -o eth0 -d 10.0.64.2 -m connmark --mark 2 -m length --length :160 -j CLASSIFY --set-class 1:143
+/sbin/iptables -t mangle -A POSTROUTING -o eth0 -d 10.0.64.2 -m connmark --mark 2 -m length --length 160: -j CLASSIFY --set-class 1:144
+/sbin/iptables -t mangle -A POSTROUTING -o eth1 -d 10.0.64.2 -m connmark --mark 2 -m length --length :160 -j CLASSIFY --set-class 1:143
+/sbin/iptables -t mangle -A POSTROUTING -o eth1 -d 10.0.64.2 -m connmark --mark 2 -m length --length 160: -j CLASSIFY --set-class 1:144
+# host: arek2 (link: dsl1)
+/sbin/iptables -t mangle -A POSTROUTING -o eth0 -d 10.0.68.21 -m connmark --mark 1 -m length --length :160 -j CLASSIFY --set-class 1:146
+/sbin/iptables -t mangle -A POSTROUTING -o eth0 -d 10.0.68.21 -m connmark --mark 1 -m length --length 160: -j CLASSIFY --set-class 1:147
+/sbin/iptables -t mangle -A POSTROUTING -o eth1 -d 10.0.68.21 -m connmark --mark 1 -m length --length :160 -j CLASSIFY --set-class 1:146
+/sbin/iptables -t mangle -A POSTROUTING -o eth1 -d 10.0.68.21 -m connmark --mark 1 -m length --length 160: -j CLASSIFY --set-class 1:147
+# host: arek2 (link: dsl2)
+/sbin/iptables -t mangle -A POSTROUTING -o eth0 -d 10.0.68.21 -m connmark --mark 2 -m length --length :160 -j CLASSIFY --set-class 1:149
+/sbin/iptables -t mangle -A POSTROUTING -o eth0 -d 10.0.68.21 -m connmark --mark 2 -m length --length 160: -j CLASSIFY --set-class 1:150
+/sbin/iptables -t mangle -A POSTROUTING -o eth1 -d 10.0.68.21 -m connmark --mark 2 -m length --length :160 -j CLASSIFY --set-class 1:149
+/sbin/iptables -t mangle -A POSTROUTING -o eth1 -d 10.0.68.21 -m connmark --mark 2 -m length --length 160: -j CLASSIFY --set-class 1:150
+# host: asia (link: dsl1)
+/sbin/iptables -t mangle -A POSTROUTING -o eth0 -d 10.0.44.3 -m connmark --mark 1 -m length --length :160 -j CLASSIFY --set-class 1:152
+/sbin/iptables -t mangle -A POSTROUTING -o eth0 -d 10.0.44.3 -m connmark --mark 1 -m length --length 160: -j CLASSIFY --set-class 1:153
+/sbin/iptables -t mangle -A POSTROUTING -o eth1 -d 10.0.44.3 -m connmark --mark 1 -m length --length :160 -j CLASSIFY --set-class 1:152
+/sbin/iptables -t mangle -A POSTROUTING -o eth1 -d 10.0.44.3 -m connmark --mark 1 -m length --length 160: -j CLASSIFY --set-class 1:153
+# host: asia (link: dsl2)
+/sbin/iptables -t mangle -A POSTROUTING -o eth0 -d 10.0.44.3 -m connmark --mark 2 -m length --length :160 -j CLASSIFY --set-class 1:155
+/sbin/iptables -t mangle -A POSTROUTING -o eth0 -d 10.0.44.3 -m connmark --mark 2 -m length --length 160: -j CLASSIFY --set-class 1:156
+/sbin/iptables -t mangle -A POSTROUTING -o eth1 -d 10.0.44.3 -m connmark --mark 2 -m length --length :160 -j CLASSIFY --set-class 1:155
+/sbin/iptables -t mangle -A POSTROUTING -o eth1 -d 10.0.44.3 -m connmark --mark 2 -m length --length 160: -j CLASSIFY --set-class 1:156
+# host: aska (link: dsl1)
+/sbin/iptables -t mangle -A POSTROUTING -o eth0 -d 10.0.16.1 -m connmark --mark 1 -m length --length :160 -j CLASSIFY --set-class 1:158
+/sbin/iptables -t mangle -A POSTROUTING -o eth0 -d 10.0.16.1 -m connmark --mark 1 -m length --length 160: -j CLASSIFY --set-class 1:159
+/sbin/iptables -t mangle -A POSTROUTING -o eth1 -d 10.0.16.1 -m connmark --mark 1 -m length --length :160 -j CLASSIFY --set-class 1:158
+/sbin/iptables -t mangle -A POSTROUTING -o eth1 -d 10.0.16.1 -m connmark --mark 1 -m length --length 160: -j CLASSIFY --set-class 1:159
+# host: aska (link: dsl2)
+/sbin/iptables -t mangle -A POSTROUTING -o eth0 -d 10.0.16.1 -m connmark --mark 2 -m length --length :160 -j CLASSIFY --set-class 1:161
+/sbin/iptables -t mangle -A POSTROUTING -o eth0 -d 10.0.16.1 -m connmark --mark 2 -m length --length 160: -j CLASSIFY --set-class 1:162
+/sbin/iptables -t mangle -A POSTROUTING -o eth1 -d 10.0.16.1 -m connmark --mark 2 -m length --length :160 -j CLASSIFY --set-class 1:161
+/sbin/iptables -t mangle -A POSTROUTING -o eth1 -d 10.0.16.1 -m connmark --mark 2 -m length --length 160: -j CLASSIFY --set-class 1:162
+# host: atener (link: dsl1)
+/sbin/iptables -t mangle -A POSTROUTING -o eth0 -d 10.0.8.39 -m connmark --mark 1 -m length --length :160 -j CLASSIFY --set-class 1:164
+/sbin/iptables -t mangle -A POSTROUTING -o eth0 -d 10.0.8.39 -m connmark --mark 1 -m length --length 160: -j CLASSIFY --set-class 1:165
+/sbin/iptables -t mangle -A POSTROUTING -o eth1 -d 10.0.8.39 -m connmark --mark 1 -m length --length :160 -j CLASSIFY --set-class 1:164
+/sbin/iptables -t mangle -A POSTROUTING -o eth1 -d 10.0.8.39 -m connmark --mark 1 -m length --length 160: -j CLASSIFY --set-class 1:165
+# host: atener (link: dsl2)
+/sbin/iptables -t mangle -A POSTROUTING -o eth0 -d 10.0.8.39 -m connmark --mark 2 -m length --length :160 -j CLASSIFY --set-class 1:167
+/sbin/iptables -t mangle -A POSTROUTING -o eth0 -d 10.0.8.39 -m connmark --mark 2 -m length --length 160: -j CLASSIFY --set-class 1:168
+/sbin/iptables -t mangle -A POSTROUTING -o eth1 -d 10.0.8.39 -m connmark --mark 2 -m length --length :160 -j CLASSIFY --set-class 1:167
+/sbin/iptables -t mangle -A POSTROUTING -o eth1 -d 10.0.8.39 -m connmark --mark 2 -m length --length 160: -j CLASSIFY --set-class 1:168
+# host: bagzi (link: dsl1)
+/sbin/iptables -t mangle -A POSTROUTING -o eth0 -d 10.0.80.27 -m connmark --mark 1 -m length --length :160 -j CLASSIFY --set-class 1:170
+/sbin/iptables -t mangle -A POSTROUTING -o eth0 -d 10.0.80.27 -m connmark --mark 1 -m length --length 160: -j CLASSIFY --set-class 1:171
+/sbin/iptables -t mangle -A POSTROUTING -o eth1 -d 10.0.80.27 -m connmark --mark 1 -m length --length :160 -j CLASSIFY --set-class 1:170
+/sbin/iptables -t mangle -A POSTROUTING -o eth1 -d 10.0.80.27 -m connmark --mark 1 -m length --length 160: -j CLASSIFY --set-class 1:171
+# host: bagzi (link: dsl2)
+/sbin/iptables -t mangle -A POSTROUTING -o eth0 -d 10.0.80.27 -m connmark --mark 2 -m length --length :160 -j CLASSIFY --set-class 1:173
+/sbin/iptables -t mangle -A POSTROUTING -o eth0 -d 10.0.80.27 -m connmark --mark 2 -m length --length 160: -j CLASSIFY --set-class 1:174
+/sbin/iptables -t mangle -A POSTROUTING -o eth1 -d 10.0.80.27 -m connmark --mark 2 -m length --length :160 -j CLASSIFY --set-class 1:173
+/sbin/iptables -t mangle -A POSTROUTING -o eth1 -d 10.0.80.27 -m connmark --mark 2 -m length --length 160: -j CLASSIFY --set-class 1:174
+# host: basia (link: dsl1)
+/sbin/iptables -t mangle -A POSTROUTING -o eth0 -d 10.0.28.2 -m connmark --mark 1 -m length --length :160 -j CLASSIFY --set-class 1:176
+/sbin/iptables -t mangle -A POSTROUTING -o eth0 -d 10.0.28.2 -m connmark --mark 1 -m length --length 160: -j CLASSIFY --set-class 1:177
+/sbin/iptables -t mangle -A POSTROUTING -o eth1 -d 10.0.28.2 -m connmark --mark 1 -m length --length :160 -j CLASSIFY --set-class 1:176
+/sbin/iptables -t mangle -A POSTROUTING -o eth1 -d 10.0.28.2 -m connmark --mark 1 -m length --length 160: -j CLASSIFY --set-class 1:177
+# host: basia (link: dsl2)
+/sbin/iptables -t mangle -A POSTROUTING -o eth0 -d 10.0.28.2 -m connmark --mark 2 -m length --length :160 -j CLASSIFY --set-class 1:179
+/sbin/iptables -t mangle -A POSTROUTING -o eth0 -d 10.0.28.2 -m connmark --mark 2 -m length --length 160: -j CLASSIFY --set-class 1:180
+/sbin/iptables -t mangle -A POSTROUTING -o eth1 -d 10.0.28.2 -m connmark --mark 2 -m length --length :160 -j CLASSIFY --set-class 1:179
+/sbin/iptables -t mangle -A POSTROUTING -o eth1 -d 10.0.28.2 -m connmark --mark 2 -m length --length 160: -j CLASSIFY --set-class 1:180
+# host: basta (link: dsl1)
+/sbin/iptables -t mangle -A POSTROUTING -o eth0 -d 10.0.68.22 -m connmark --mark 1 -m length --length :160 -j CLASSIFY --set-class 1:182
+/sbin/iptables -t mangle -A POSTROUTING -o eth0 -d 10.0.68.22 -m connmark --mark 1 -m length --length 160: -j CLASSIFY --set-class 1:183
+/sbin/iptables -t mangle -A POSTROUTING -o eth1 -d 10.0.68.22 -m connmark --mark 1 -m length --length :160 -j CLASSIFY --set-class 1:182
+/sbin/iptables -t mangle -A POSTROUTING -o eth1 -d 10.0.68.22 -m connmark --mark 1 -m length --length 160: -j CLASSIFY --set-class 1:183
+# host: basta (link: dsl2)
+/sbin/iptables -t mangle -A POSTROUTING -o eth0 -d 10.0.68.22 -m connmark --mark 2 -m length --length :160 -j CLASSIFY --set-class 1:185
+/sbin/iptables -t mangle -A POSTROUTING -o eth0 -d 10.0.68.22 -m connmark --mark 2 -m length --length 160: -j CLASSIFY --set-class 1:186
+/sbin/iptables -t mangle -A POSTROUTING -o eth1 -d 10.0.68.22 -m connmark --mark 2 -m length --length :160 -j CLASSIFY --set-class 1:185
+/sbin/iptables -t mangle -A POSTROUTING -o eth1 -d 10.0.68.22 -m connmark --mark 2 -m length --length 160: -j CLASSIFY --set-class 1:186
+# host: batoon (link: dsl1)
+/sbin/iptables -t mangle -A POSTROUTING -o eth0 -d 10.0.16.2 -m connmark --mark 1 -m length --length :160 -j CLASSIFY --set-class 1:188
+/sbin/iptables -t mangle -A POSTROUTING -o eth0 -d 10.0.16.2 -m connmark --mark 1 -m length --length 160: -j CLASSIFY --set-class 1:189
+/sbin/iptables -t mangle -A POSTROUTING -o eth1 -d 10.0.16.2 -m connmark --mark 1 -m length --length :160 -j CLASSIFY --set-class 1:188
+/sbin/iptables -t mangle -A POSTROUTING -o eth1 -d 10.0.16.2 -m connmark --mark 1 -m length --length 160: -j CLASSIFY --set-class 1:189
+# host: batoon (link: dsl2)
+/sbin/iptables -t mangle -A POSTROUTING -o eth0 -d 10.0.16.2 -m connmark --mark 2 -m length --length :160 -j CLASSIFY --set-class 1:191
+/sbin/iptables -t mangle -A POSTROUTING -o eth0 -d 10.0.16.2 -m connmark --mark 2 -m length --length 160: -j CLASSIFY --set-class 1:192
+/sbin/iptables -t mangle -A POSTROUTING -o eth1 -d 10.0.16.2 -m connmark --mark 2 -m length --length :160 -j CLASSIFY --set-class 1:191
+/sbin/iptables -t mangle -A POSTROUTING -o eth1 -d 10.0.16.2 -m connmark --mark 2 -m length --length 160: -j CLASSIFY --set-class 1:192
+# host: beata (link: dsl1)
+/sbin/iptables -t mangle -A POSTROUTING -o eth0 -d 10.0.32.3 -m connmark --mark 1 -m length --length :160 -j CLASSIFY --set-class 1:194
+/sbin/iptables -t mangle -A POSTROUTING -o eth0 -d 10.0.32.3 -m connmark --mark 1 -m length --length 160: -j CLASSIFY --set-class 1:195
+/sbin/iptables -t mangle -A POSTROUTING -o eth1 -d 10.0.32.3 -m connmark --mark 1 -m length --length :160 -j CLASSIFY --set-class 1:194
+/sbin/iptables -t mangle -A POSTROUTING -o eth1 -d 10.0.32.3 -m connmark --mark 1 -m length --length 160: -j CLASSIFY --set-class 1:195
+# host: beata (link: dsl2)
+/sbin/iptables -t mangle -A POSTROUTING -o eth0 -d 10.0.32.3 -m connmark --mark 2 -m length --length :160 -j CLASSIFY --set-class 1:197
+/sbin/iptables -t mangle -A POSTROUTING -o eth0 -d 10.0.32.3 -m connmark --mark 2 -m length --length 160: -j CLASSIFY --set-class 1:198
+/sbin/iptables -t mangle -A POSTROUTING -o eth1 -d 10.0.32.3 -m connmark --mark 2 -m length --length :160 -j CLASSIFY --set-class 1:197
+/sbin/iptables -t mangle -A POSTROUTING -o eth1 -d 10.0.32.3 -m connmark --mark 2 -m length --length 160: -j CLASSIFY --set-class 1:198
+# host: beta (link: dsl1)
+/sbin/iptables -t mangle -A POSTROUTING -o eth0 -d 10.0.64.3 -m connmark --mark 1 -m length --length :160 -j CLASSIFY --set-class 1:200
+/sbin/iptables -t mangle -A POSTROUTING -o eth0 -d 10.0.64.3 -m connmark --mark 1 -m length --length 160: -j CLASSIFY --set-class 1:201
+/sbin/iptables -t mangle -A POSTROUTING -o eth1 -d 10.0.64.3 -m connmark --mark 1 -m length --length :160 -j CLASSIFY --set-class 1:200
+/sbin/iptables -t mangle -A POSTROUTING -o eth1 -d 10.0.64.3 -m connmark --mark 1 -m length --length 160: -j CLASSIFY --set-class 1:201
+# host: beta (link: dsl2)
+/sbin/iptables -t mangle -A POSTROUTING -o eth0 -d 10.0.64.3 -m connmark --mark 2 -m length --length :160 -j CLASSIFY --set-class 1:203
+/sbin/iptables -t mangle -A POSTROUTING -o eth0 -d 10.0.64.3 -m connmark --mark 2 -m length --length 160: -j CLASSIFY --set-class 1:204
+/sbin/iptables -t mangle -A POSTROUTING -o eth1 -d 10.0.64.3 -m connmark --mark 2 -m length --length :160 -j CLASSIFY --set-class 1:203
+/sbin/iptables -t mangle -A POSTROUTING -o eth1 -d 10.0.64.3 -m connmark --mark 2 -m length --length 160: -j CLASSIFY --set-class 1:204
+# host: bettipeter (link: dsl1)
+/sbin/iptables -t mangle -A POSTROUTING -o eth0 -d 10.0.52.6 -m connmark --mark 1 -m length --length :160 -j CLASSIFY --set-class 1:206
+/sbin/iptables -t mangle -A POSTROUTING -o eth0 -d 10.0.52.6 -m connmark --mark 1 -m length --length 160: -j CLASSIFY --set-class 1:207
+/sbin/iptables -t mangle -A POSTROUTING -o eth1 -d 10.0.52.6 -m connmark --mark 1 -m length --length :160 -j CLASSIFY --set-class 1:206
+/sbin/iptables -t mangle -A POSTROUTING -o eth1 -d 10.0.52.6 -m connmark --mark 1 -m length --length 160: -j CLASSIFY --set-class 1:207
+# host: bettipeter (link: dsl2)
+/sbin/iptables -t mangle -A POSTROUTING -o eth0 -d 10.0.52.6 -m connmark --mark 2 -m length --length :160 -j CLASSIFY --set-class 1:209
+/sbin/iptables -t mangle -A POSTROUTING -o eth0 -d 10.0.52.6 -m connmark --mark 2 -m length --length 160: -j CLASSIFY --set-class 1:210
+/sbin/iptables -t mangle -A POSTROUTING -o eth1 -d 10.0.52.6 -m connmark --mark 2 -m length --length :160 -j CLASSIFY --set-class 1:209
+/sbin/iptables -t mangle -A POSTROUTING -o eth1 -d 10.0.52.6 -m connmark --mark 2 -m length --length 160: -j CLASSIFY --set-class 1:210
+# host: bilbo (link: dsl1)
+/sbin/iptables -t mangle -A POSTROUTING -o eth0 -d 10.0.32.4 -m connmark --mark 1 -m length --length :160 -j CLASSIFY --set-class 1:212
+/sbin/iptables -t mangle -A POSTROUTING -o eth0 -d 10.0.32.4 -m connmark --mark 1 -m length --length 160: -j CLASSIFY --set-class 1:213
+/sbin/iptables -t mangle -A POSTROUTING -o eth1 -d 10.0.32.4 -m connmark --mark 1 -m length --length :160 -j CLASSIFY --set-class 1:212
+/sbin/iptables -t mangle -A POSTROUTING -o eth1 -d 10.0.32.4 -m connmark --mark 1 -m length --length 160: -j CLASSIFY --set-class 1:213
+# host: bilbo (link: dsl2)
+/sbin/iptables -t mangle -A POSTROUTING -o eth0 -d 10.0.32.4 -m connmark --mark 2 -m length --length :160 -j CLASSIFY --set-class 1:215
+/sbin/iptables -t mangle -A POSTROUTING -o eth0 -d 10.0.32.4 -m connmark --mark 2 -m length --length 160: -j CLASSIFY --set-class 1:216
+/sbin/iptables -t mangle -A POSTROUTING -o eth1 -d 10.0.32.4 -m connmark --mark 2 -m length --length :160 -j CLASSIFY --set-class 1:215
+/sbin/iptables -t mangle -A POSTROUTING -o eth1 -d 10.0.32.4 -m connmark --mark 2 -m length --length 160: -j CLASSIFY --set-class 1:216
+# host: blant (link: dsl1)
+/sbin/iptables -t mangle -A POSTROUTING -o eth0 -d 10.0.80.2 -m connmark --mark 1 -m length --length :160 -j CLASSIFY --set-class 1:218
+/sbin/iptables -t mangle -A POSTROUTING -o eth0 -d 10.0.80.2 -m connmark --mark 1 -m length --length 160: -j CLASSIFY --set-class 1:219
+/sbin/iptables -t mangle -A POSTROUTING -o eth1 -d 10.0.80.2 -m connmark --mark 1 -m length --length :160 -j CLASSIFY --set-class 1:218
+/sbin/iptables -t mangle -A POSTROUTING -o eth1 -d 10.0.80.2 -m connmark --mark 1 -m length --length 160: -j CLASSIFY --set-class 1:219
+# host: blant (link: dsl2)
+/sbin/iptables -t mangle -A POSTROUTING -o eth0 -d 10.0.80.2 -m connmark --mark 2 -m length --length :160 -j CLASSIFY --set-class 1:221
+/sbin/iptables -t mangle -A POSTROUTING -o eth0 -d 10.0.80.2 -m connmark --mark 2 -m length --length 160: -j CLASSIFY --set-class 1:222
+/sbin/iptables -t mangle -A POSTROUTING -o eth1 -d 10.0.80.2 -m connmark --mark 2 -m length --length :160 -j CLASSIFY --set-class 1:221
+/sbin/iptables -t mangle -A POSTROUTING -o eth1 -d 10.0.80.2 -m connmark --mark 2 -m length --length 160: -j CLASSIFY --set-class 1:222
+# host: blondie (link: dsl1)
+/sbin/iptables -t mangle -A POSTROUTING -o eth0 -d 10.0.76.2 -m connmark --mark 1 -m length --length :160 -j CLASSIFY --set-class 1:224
+/sbin/iptables -t mangle -A POSTROUTING -o eth0 -d 10.0.76.2 -m connmark --mark 1 -m length --length 160: -j CLASSIFY --set-class 1:225
+/sbin/iptables -t mangle -A POSTROUTING -o eth1 -d 10.0.76.2 -m connmark --mark 1 -m length --length :160 -j CLASSIFY --set-class 1:224
+/sbin/iptables -t mangle -A POSTROUTING -o eth1 -d 10.0.76.2 -m connmark --mark 1 -m length --length 160: -j CLASSIFY --set-class 1:225
+# host: blondie (link: dsl2)
+/sbin/iptables -t mangle -A POSTROUTING -o eth0 -d 10.0.76.2 -m connmark --mark 2 -m length --length :160 -j CLASSIFY --set-class 1:227
+/sbin/iptables -t mangle -A POSTROUTING -o eth0 -d 10.0.76.2 -m connmark --mark 2 -m length --length 160: -j CLASSIFY --set-class 1:228
+/sbin/iptables -t mangle -A POSTROUTING -o eth1 -d 10.0.76.2 -m connmark --mark 2 -m length --length :160 -j CLASSIFY --set-class 1:227
+/sbin/iptables -t mangle -A POSTROUTING -o eth1 -d 10.0.76.2 -m connmark --mark 2 -m length --length 160: -j CLASSIFY --set-class 1:228
+# host: bonek (link: dsl1)
+/sbin/iptables -t mangle -A POSTROUTING -o eth0 -d 10.0.56.4 -m connmark --mark 1 -m length --length :160 -j CLASSIFY --set-class 1:230
+/sbin/iptables -t mangle -A POSTROUTING -o eth0 -d 10.0.56.4 -m connmark --mark 1 -m length --length 160: -j CLASSIFY --set-class 1:231
+/sbin/iptables -t mangle -A POSTROUTING -o eth1 -d 10.0.56.4 -m connmark --mark 1 -m length --length :160 -j CLASSIFY --set-class 1:230
+/sbin/iptables -t mangle -A POSTROUTING -o eth1 -d 10.0.56.4 -m connmark --mark 1 -m length --length 160: -j CLASSIFY --set-class 1:231
+# host: bonek (link: dsl2)
+/sbin/iptables -t mangle -A POSTROUTING -o eth0 -d 10.0.56.4 -m connmark --mark 2 -m length --length :160 -j CLASSIFY --set-class 1:233
+/sbin/iptables -t mangle -A POSTROUTING -o eth0 -d 10.0.56.4 -m connmark --mark 2 -m length --length 160: -j CLASSIFY --set-class 1:234
+/sbin/iptables -t mangle -A POSTROUTING -o eth1 -d 10.0.56.4 -m connmark --mark 2 -m length --length :160 -j CLASSIFY --set-class 1:233
+/sbin/iptables -t mangle -A POSTROUTING -o eth1 -d 10.0.56.4 -m connmark --mark 2 -m length --length 160: -j CLASSIFY --set-class 1:234
+# host: bp (link: dsl1)
+/sbin/iptables -t mangle -A POSTROUTING -o eth0 -d 10.0.32.6 -m connmark --mark 1 -m length --length :160 -j CLASSIFY --set-class 1:236
+/sbin/iptables -t mangle -A POSTROUTING -o eth0 -d 10.0.32.6 -m connmark --mark 1 -m length --length 160: -j CLASSIFY --set-class 1:237
+/sbin/iptables -t mangle -A POSTROUTING -o eth1 -d 10.0.32.6 -m connmark --mark 1 -m length --length :160 -j CLASSIFY --set-class 1:236
+/sbin/iptables -t mangle -A POSTROUTING -o eth1 -d 10.0.32.6 -m connmark --mark 1 -m length --length 160: -j CLASSIFY --set-class 1:237
+# host: bp (link: dsl2)
+/sbin/iptables -t mangle -A POSTROUTING -o eth0 -d 10.0.32.6 -m connmark --mark 2 -m length --length :160 -j CLASSIFY --set-class 1:239
+/sbin/iptables -t mangle -A POSTROUTING -o eth0 -d 10.0.32.6 -m connmark --mark 2 -m length --length 160: -j CLASSIFY --set-class 1:240
+/sbin/iptables -t mangle -A POSTROUTING -o eth1 -d 10.0.32.6 -m connmark --mark 2 -m length --length :160 -j CLASSIFY --set-class 1:239
+/sbin/iptables -t mangle -A POSTROUTING -o eth1 -d 10.0.32.6 -m connmark --mark 2 -m length --length 160: -j CLASSIFY --set-class 1:240
+# host: bruno (link: dsl1)
+/sbin/iptables -t mangle -A POSTROUTING -o eth0 -d 10.0.80.4 -m connmark --mark 1 -m length --length :160 -j CLASSIFY --set-class 1:242
+/sbin/iptables -t mangle -A POSTROUTING -o eth0 -d 10.0.80.4 -m connmark --mark 1 -m length --length 160: -j CLASSIFY --set-class 1:243
+/sbin/iptables -t mangle -A POSTROUTING -o eth1 -d 10.0.80.4 -m connmark --mark 1 -m length --length :160 -j CLASSIFY --set-class 1:242
+/sbin/iptables -t mangle -A POSTROUTING -o eth1 -d 10.0.80.4 -m connmark --mark 1 -m length --length 160: -j CLASSIFY --set-class 1:243
+# host: bruno (link: dsl2)
+/sbin/iptables -t mangle -A POSTROUTING -o eth0 -d 10.0.80.4 -m connmark --mark 2 -m length --length :160 -j CLASSIFY --set-class 1:245
+/sbin/iptables -t mangle -A POSTROUTING -o eth0 -d 10.0.80.4 -m connmark --mark 2 -m length --length 160: -j CLASSIFY --set-class 1:246
+/sbin/iptables -t mangle -A POSTROUTING -o eth1 -d 10.0.80.4 -m connmark --mark 2 -m length --length :160 -j CLASSIFY --set-class 1:245
+/sbin/iptables -t mangle -A POSTROUTING -o eth1 -d 10.0.80.4 -m connmark --mark 2 -m length --length 160: -j CLASSIFY --set-class 1:246
+# host: buli (link: dsl1)
+/sbin/iptables -t mangle -A POSTROUTING -o eth0 -d 10.0.52.8 -m connmark --mark 1 -m length --length :160 -j CLASSIFY --set-class 1:248
+/sbin/iptables -t mangle -A POSTROUTING -o eth0 -d 10.0.52.8 -m connmark --mark 1 -m length --length 160: -j CLASSIFY --set-class 1:249
+/sbin/iptables -t mangle -A POSTROUTING -o eth1 -d 10.0.52.8 -m connmark --mark 1 -m length --length :160 -j CLASSIFY --set-class 1:248
+/sbin/iptables -t mangle -A POSTROUTING -o eth1 -d 10.0.52.8 -m connmark --mark 1 -m length --length 160: -j CLASSIFY --set-class 1:249
+# host: buli (link: dsl2)
+/sbin/iptables -t mangle -A POSTROUTING -o eth0 -d 10.0.52.8 -m connmark --mark 2 -m length --length :160 -j CLASSIFY --set-class 1:251
+/sbin/iptables -t mangle -A POSTROUTING -o eth0 -d 10.0.52.8 -m connmark --mark 2 -m length --length 160: -j CLASSIFY --set-class 1:252
+/sbin/iptables -t mangle -A POSTROUTING -o eth1 -d 10.0.52.8 -m connmark --mark 2 -m length --length :160 -j CLASSIFY --set-class 1:251
+/sbin/iptables -t mangle -A POSTROUTING -o eth1 -d 10.0.52.8 -m connmark --mark 2 -m length --length 160: -j CLASSIFY --set-class 1:252
+# host: cielak (link: dsl1)
+/sbin/iptables -t mangle -A POSTROUTING -o eth0 -d 10.0.12.2 -m connmark --mark 1 -m length --length :160 -j CLASSIFY --set-class 1:254
+/sbin/iptables -t mangle -A POSTROUTING -o eth0 -d 10.0.12.2 -m connmark --mark 1 -m length --length 160: -j CLASSIFY --set-class 1:255
+/sbin/iptables -t mangle -A POSTROUTING -o eth1 -d 10.0.12.2 -m connmark --mark 1 -m length --length :160 -j CLASSIFY --set-class 1:254
+/sbin/iptables -t mangle -A POSTROUTING -o eth1 -d 10.0.12.2 -m connmark --mark 1 -m length --length 160: -j CLASSIFY --set-class 1:255
+# host: cielak (link: dsl2)
+/sbin/iptables -t mangle -A POSTROUTING -o eth0 -d 10.0.12.2 -m connmark --mark 2 -m length --length :160 -j CLASSIFY --set-class 1:257
+/sbin/iptables -t mangle -A POSTROUTING -o eth0 -d 10.0.12.2 -m connmark --mark 2 -m length --length 160: -j CLASSIFY --set-class 1:258
+/sbin/iptables -t mangle -A POSTROUTING -o eth1 -d 10.0.12.2 -m connmark --mark 2 -m length --length :160 -j CLASSIFY --set-class 1:257
+/sbin/iptables -t mangle -A POSTROUTING -o eth1 -d 10.0.12.2 -m connmark --mark 2 -m length --length 160: -j CLASSIFY --set-class 1:258
+# host: cobra (link: dsl1)
+/sbin/iptables -t mangle -A POSTROUTING -o eth0 -d 10.0.48.2 -m connmark --mark 1 -m length --length :160 -j CLASSIFY --set-class 1:260
+/sbin/iptables -t mangle -A POSTROUTING -o eth0 -d 10.0.48.2 -m connmark --mark 1 -m length --length 160: -j CLASSIFY --set-class 1:261
+/sbin/iptables -t mangle -A POSTROUTING -o eth1 -d 10.0.48.2 -m connmark --mark 1 -m length --length :160 -j CLASSIFY --set-class 1:260
+/sbin/iptables -t mangle -A POSTROUTING -o eth1 -d 10.0.48.2 -m connmark --mark 1 -m length --length 160: -j CLASSIFY --set-class 1:261
+# host: cobra (link: dsl2)
+/sbin/iptables -t mangle -A POSTROUTING -o eth0 -d 10.0.48.2 -m connmark --mark 2 -m length --length :160 -j CLASSIFY --set-class 1:263
+/sbin/iptables -t mangle -A POSTROUTING -o eth0 -d 10.0.48.2 -m connmark --mark 2 -m length --length 160: -j CLASSIFY --set-class 1:264
+/sbin/iptables -t mangle -A POSTROUTING -o eth1 -d 10.0.48.2 -m connmark --mark 2 -m length --length :160 -j CLASSIFY --set-class 1:263
+/sbin/iptables -t mangle -A POSTROUTING -o eth1 -d 10.0.48.2 -m connmark --mark 2 -m length --length 160: -j CLASSIFY --set-class 1:264
+# host: coca-cola (link: dsl1)
+/sbin/iptables -t mangle -A POSTROUTING -o eth0 -d 10.0.36.3 -m connmark --mark 1 -m length --length :160 -j CLASSIFY --set-class 1:266
+/sbin/iptables -t mangle -A POSTROUTING -o eth0 -d 10.0.36.3 -m connmark --mark 1 -m length --length 160: -j CLASSIFY --set-class 1:267
+/sbin/iptables -t mangle -A POSTROUTING -o eth1 -d 10.0.36.3 -m connmark --mark 1 -m length --length :160 -j CLASSIFY --set-class 1:266
+/sbin/iptables -t mangle -A POSTROUTING -o eth1 -d 10.0.36.3 -m connmark --mark 1 -m length --length 160: -j CLASSIFY --set-class 1:267
+# host: coca-cola (link: dsl2)
+/sbin/iptables -t mangle -A POSTROUTING -o eth0 -d 10.0.36.3 -m connmark --mark 2 -m length --length :160 -j CLASSIFY --set-class 1:269
+/sbin/iptables -t mangle -A POSTROUTING -o eth0 -d 10.0.36.3 -m connmark --mark 2 -m length --length 160: -j CLASSIFY --set-class 1:270
+/sbin/iptables -t mangle -A POSTROUTING -o eth1 -d 10.0.36.3 -m connmark --mark 2 -m length --length :160 -j CLASSIFY --set-class 1:269
+/sbin/iptables -t mangle -A POSTROUTING -o eth1 -d 10.0.36.3 -m connmark --mark 2 -m length --length 160: -j CLASSIFY --set-class 1:270
+# host: connrad (link: dsl1)
+/sbin/iptables -t mangle -A POSTROUTING -o eth0 -d 10.0.44.4 -m connmark --mark 1 -m length --length :160 -j CLASSIFY --set-class 1:272
+/sbin/iptables -t mangle -A POSTROUTING -o eth0 -d 10.0.44.4 -m connmark --mark 1 -m length --length 160: -j CLASSIFY --set-class 1:273
+/sbin/iptables -t mangle -A POSTROUTING -o eth1 -d 10.0.44.4 -m connmark --mark 1 -m length --length :160 -j CLASSIFY --set-class 1:272
+/sbin/iptables -t mangle -A POSTROUTING -o eth1 -d 10.0.44.4 -m connmark --mark 1 -m length --length 160: -j CLASSIFY --set-class 1:273
+# host: connrad (link: dsl2)
+/sbin/iptables -t mangle -A POSTROUTING -o eth0 -d 10.0.44.4 -m connmark --mark 2 -m length --length :160 -j CLASSIFY --set-class 1:275
+/sbin/iptables -t mangle -A POSTROUTING -o eth0 -d 10.0.44.4 -m connmark --mark 2 -m length --length 160: -j CLASSIFY --set-class 1:276
+/sbin/iptables -t mangle -A POSTROUTING -o eth1 -d 10.0.44.4 -m connmark --mark 2 -m length --length :160 -j CLASSIFY --set-class 1:275
+/sbin/iptables -t mangle -A POSTROUTING -o eth1 -d 10.0.44.4 -m connmark --mark 2 -m length --length 160: -j CLASSIFY --set-class 1:276
+# host: d800 (link: dsl1)
+/sbin/iptables -t mangle -A POSTROUTING -o eth0 -d 10.0.20.2 -m connmark --mark 1 -m length --length :160 -j CLASSIFY --set-class 1:278
+/sbin/iptables -t mangle -A POSTROUTING -o eth0 -d 10.0.20.2 -m connmark --mark 1 -m length --length 160: -j CLASSIFY --set-class 1:279
+/sbin/iptables -t mangle -A POSTROUTING -o eth1 -d 10.0.20.2 -m connmark --mark 1 -m length --length :160 -j CLASSIFY --set-class 1:278
+/sbin/iptables -t mangle -A POSTROUTING -o eth1 -d 10.0.20.2 -m connmark --mark 1 -m length --length 160: -j CLASSIFY --set-class 1:279
+# host: d800 (link: dsl2)
+/sbin/iptables -t mangle -A POSTROUTING -o eth0 -d 10.0.20.2 -m connmark --mark 2 -m length --length :160 -j CLASSIFY --set-class 1:281
+/sbin/iptables -t mangle -A POSTROUTING -o eth0 -d 10.0.20.2 -m connmark --mark 2 -m length --length 160: -j CLASSIFY --set-class 1:282
+/sbin/iptables -t mangle -A POSTROUTING -o eth1 -d 10.0.20.2 -m connmark --mark 2 -m length --length :160 -j CLASSIFY --set-class 1:281
+/sbin/iptables -t mangle -A POSTROUTING -o eth1 -d 10.0.20.2 -m connmark --mark 2 -m length --length 160: -j CLASSIFY --set-class 1:282
+# host: daniel (link: dsl1)
+/sbin/iptables -t mangle -A POSTROUTING -o eth0 -d 10.0.8.2 -m connmark --mark 1 -m length --length :160 -j CLASSIFY --set-class 1:284
+/sbin/iptables -t mangle -A POSTROUTING -o eth0 -d 10.0.8.2 -m connmark --mark 1 -m length --length 160: -j CLASSIFY --set-class 1:285
+/sbin/iptables -t mangle -A POSTROUTING -o eth1 -d 10.0.8.2 -m connmark --mark 1 -m length --length :160 -j CLASSIFY --set-class 1:284
+/sbin/iptables -t mangle -A POSTROUTING -o eth1 -d 10.0.8.2 -m connmark --mark 1 -m length --length 160: -j CLASSIFY --set-class 1:285
+# host: daniel (link: dsl2)
+/sbin/iptables -t mangle -A POSTROUTING -o eth0 -d 10.0.8.2 -m connmark --mark 2 -m length --length :160 -j CLASSIFY --set-class 1:287
+/sbin/iptables -t mangle -A POSTROUTING -o eth0 -d 10.0.8.2 -m connmark --mark 2 -m length --length 160: -j CLASSIFY --set-class 1:288
+/sbin/iptables -t mangle -A POSTROUTING -o eth1 -d 10.0.8.2 -m connmark --mark 2 -m length --length :160 -j CLASSIFY --set-class 1:287
+/sbin/iptables -t mangle -A POSTROUTING -o eth1 -d 10.0.8.2 -m connmark --mark 2 -m length --length 160: -j CLASSIFY --set-class 1:288
+# host: danielu (link: dsl1)
+/sbin/iptables -t mangle -A POSTROUTING -o eth0 -d 10.0.64.5 -m connmark --mark 1 -m length --length :160 -j CLASSIFY --set-class 1:290
+/sbin/iptables -t mangle -A POSTROUTING -o eth0 -d 10.0.64.5 -m connmark --mark 1 -m length --length 160: -j CLASSIFY --set-class 1:291
+/sbin/iptables -t mangle -A POSTROUTING -o eth1 -d 10.0.64.5 -m connmark --mark 1 -m length --length :160 -j CLASSIFY --set-class 1:290
+/sbin/iptables -t mangle -A POSTROUTING -o eth1 -d 10.0.64.5 -m connmark --mark 1 -m length --length 160: -j CLASSIFY --set-class 1:291
+# host: danielu (link: dsl2)
+/sbin/iptables -t mangle -A POSTROUTING -o eth0 -d 10.0.64.5 -m connmark --mark 2 -m length --length :160 -j CLASSIFY --set-class 1:293
+/sbin/iptables -t mangle -A POSTROUTING -o eth0 -d 10.0.64.5 -m connmark --mark 2 -m length --length 160: -j CLASSIFY --set-class 1:294
+/sbin/iptables -t mangle -A POSTROUTING -o eth1 -d 10.0.64.5 -m connmark --mark 2 -m length --length :160 -j CLASSIFY --set-class 1:293
+/sbin/iptables -t mangle -A POSTROUTING -o eth1 -d 10.0.64.5 -m connmark --mark 2 -m length --length 160: -j CLASSIFY --set-class 1:294
+# host: daqu (link: dsl1)
+/sbin/iptables -t mangle -A POSTROUTING -o eth0 -d 10.0.76.3 -m connmark --mark 1 -m length --length :160 -j CLASSIFY --set-class 1:296
+/sbin/iptables -t mangle -A POSTROUTING -o eth0 -d 10.0.76.3 -m connmark --mark 1 -m length --length 160: -j CLASSIFY --set-class 1:297
+/sbin/iptables -t mangle -A POSTROUTING -o eth1 -d 10.0.76.3 -m connmark --mark 1 -m length --length :160 -j CLASSIFY --set-class 1:296
+/sbin/iptables -t mangle -A POSTROUTING -o eth1 -d 10.0.76.3 -m connmark --mark 1 -m length --length 160: -j CLASSIFY --set-class 1:297
+# host: daqu (link: dsl2)
+/sbin/iptables -t mangle -A POSTROUTING -o eth0 -d 10.0.76.3 -m connmark --mark 2 -m length --length :160 -j CLASSIFY --set-class 1:299
+/sbin/iptables -t mangle -A POSTROUTING -o eth0 -d 10.0.76.3 -m connmark --mark 2 -m length --length 160: -j CLASSIFY --set-class 1:300
+/sbin/iptables -t mangle -A POSTROUTING -o eth1 -d 10.0.76.3 -m connmark --mark 2 -m length --length :160 -j CLASSIFY --set-class 1:299
+/sbin/iptables -t mangle -A POSTROUTING -o eth1 -d 10.0.76.3 -m connmark --mark 2 -m length --length 160: -j CLASSIFY --set-class 1:300
+# host: deck (link: dsl1)
+/sbin/iptables -t mangle -A POSTROUTING -o eth0 -d 10.0.12.4 -m connmark --mark 1 -m length --length :160 -j CLASSIFY --set-class 1:302
+/sbin/iptables -t mangle -A POSTROUTING -o eth0 -d 10.0.12.4 -m connmark --mark 1 -m length --length 160: -j CLASSIFY --set-class 1:303
+/sbin/iptables -t mangle -A POSTROUTING -o eth1 -d 10.0.12.4 -m connmark --mark 1 -m length --length :160 -j CLASSIFY --set-class 1:302
+/sbin/iptables -t mangle -A POSTROUTING -o eth1 -d 10.0.12.4 -m connmark --mark 1 -m length --length 160: -j CLASSIFY --set-class 1:303
+# host: deck (link: dsl2)
+/sbin/iptables -t mangle -A POSTROUTING -o eth0 -d 10.0.12.4 -m connmark --mark 2 -m length --length :160 -j CLASSIFY --set-class 1:305
+/sbin/iptables -t mangle -A POSTROUTING -o eth0 -d 10.0.12.4 -m connmark --mark 2 -m length --length 160: -j CLASSIFY --set-class 1:306
+/sbin/iptables -t mangle -A POSTROUTING -o eth1 -d 10.0.12.4 -m connmark --mark 2 -m length --length :160 -j CLASSIFY --set-class 1:305
+/sbin/iptables -t mangle -A POSTROUTING -o eth1 -d 10.0.12.4 -m connmark --mark 2 -m length --length 160: -j CLASSIFY --set-class 1:306
+# host: demek (link: dsl1)
+/sbin/iptables -t mangle -A POSTROUTING -o eth0 -d 10.0.20.3 -m connmark --mark 1 -m length --length :160 -j CLASSIFY --set-class 1:308
+/sbin/iptables -t mangle -A POSTROUTING -o eth0 -d 10.0.20.3 -m connmark --mark 1 -m length --length 160: -j CLASSIFY --set-class 1:309
+/sbin/iptables -t mangle -A POSTROUTING -o eth1 -d 10.0.20.3 -m connmark --mark 1 -m length --length :160 -j CLASSIFY --set-class 1:308
+/sbin/iptables -t mangle -A POSTROUTING -o eth1 -d 10.0.20.3 -m connmark --mark 1 -m length --length 160: -j CLASSIFY --set-class 1:309
+# host: demek (link: dsl2)
+/sbin/iptables -t mangle -A POSTROUTING -o eth0 -d 10.0.20.3 -m connmark --mark 2 -m length --length :160 -j CLASSIFY --set-class 1:311
+/sbin/iptables -t mangle -A POSTROUTING -o eth0 -d 10.0.20.3 -m connmark --mark 2 -m length --length 160: -j CLASSIFY --set-class 1:312
+/sbin/iptables -t mangle -A POSTROUTING -o eth1 -d 10.0.20.3 -m connmark --mark 2 -m length --length :160 -j CLASSIFY --set-class 1:311
+/sbin/iptables -t mangle -A POSTROUTING -o eth1 -d 10.0.20.3 -m connmark --mark 2 -m length --length 160: -j CLASSIFY --set-class 1:312
+# host: demostenes (link: dsl1)
+/sbin/iptables -t mangle -A POSTROUTING -o eth0 -d 10.0.56.7 -m connmark --mark 1 -m length --length :160 -j CLASSIFY --set-class 1:314
+/sbin/iptables -t mangle -A POSTROUTING -o eth0 -d 10.0.56.7 -m connmark --mark 1 -m length --length 160: -j CLASSIFY --set-class 1:315
+/sbin/iptables -t mangle -A POSTROUTING -o eth1 -d 10.0.56.7 -m connmark --mark 1 -m length --length :160 -j CLASSIFY --set-class 1:314
+/sbin/iptables -t mangle -A POSTROUTING -o eth1 -d 10.0.56.7 -m connmark --mark 1 -m length --length 160: -j CLASSIFY --set-class 1:315
+# host: demostenes (link: dsl2)
+/sbin/iptables -t mangle -A POSTROUTING -o eth0 -d 10.0.56.7 -m connmark --mark 2 -m length --length :160 -j CLASSIFY --set-class 1:317
+/sbin/iptables -t mangle -A POSTROUTING -o eth0 -d 10.0.56.7 -m connmark --mark 2 -m length --length 160: -j CLASSIFY --set-class 1:318
+/sbin/iptables -t mangle -A POSTROUTING -o eth1 -d 10.0.56.7 -m connmark --mark 2 -m length --length :160 -j CLASSIFY --set-class 1:317
+/sbin/iptables -t mangle -A POSTROUTING -o eth1 -d 10.0.56.7 -m connmark --mark 2 -m length --length 160: -j CLASSIFY --set-class 1:318
+# host: domingo (link: dsl1)
+/sbin/iptables -t mangle -A POSTROUTING -o eth0 -d 10.0.8.3 -m connmark --mark 1 -m length --length :160 -j CLASSIFY --set-class 1:320
+/sbin/iptables -t mangle -A POSTROUTING -o eth0 -d 10.0.8.3 -m connmark --mark 1 -m length --length 160: -j CLASSIFY --set-class 1:321
+/sbin/iptables -t mangle -A POSTROUTING -o eth1 -d 10.0.8.3 -m connmark --mark 1 -m length --length :160 -j CLASSIFY --set-class 1:320
+/sbin/iptables -t mangle -A POSTROUTING -o eth1 -d 10.0.8.3 -m connmark --mark 1 -m length --length 160: -j CLASSIFY --set-class 1:321
+# host: domingo (link: dsl2)
+/sbin/iptables -t mangle -A POSTROUTING -o eth0 -d 10.0.8.3 -m connmark --mark 2 -m length --length :160 -j CLASSIFY --set-class 1:323
+/sbin/iptables -t mangle -A POSTROUTING -o eth0 -d 10.0.8.3 -m connmark --mark 2 -m length --length 160: -j CLASSIFY --set-class 1:324
+/sbin/iptables -t mangle -A POSTROUTING -o eth1 -d 10.0.8.3 -m connmark --mark 2 -m length --length :160 -j CLASSIFY --set-class 1:323
+/sbin/iptables -t mangle -A POSTROUTING -o eth1 -d 10.0.8.3 -m connmark --mark 2 -m length --length 160: -j CLASSIFY --set-class 1:324
+# host: dorota (link: dsl1)
+/sbin/iptables -t mangle -A POSTROUTING -o eth0 -d 10.0.36.4 -m connmark --mark 1 -m length --length :160 -j CLASSIFY --set-class 1:326
+/sbin/iptables -t mangle -A POSTROUTING -o eth0 -d 10.0.36.4 -m connmark --mark 1 -m length --length 160: -j CLASSIFY --set-class 1:327
+/sbin/iptables -t mangle -A POSTROUTING -o eth1 -d 10.0.36.4 -m connmark --mark 1 -m length --length :160 -j CLASSIFY --set-class 1:326
+/sbin/iptables -t mangle -A POSTROUTING -o eth1 -d 10.0.36.4 -m connmark --mark 1 -m length --length 160: -j CLASSIFY --set-class 1:327
+# host: dorota (link: dsl2)
+/sbin/iptables -t mangle -A POSTROUTING -o eth0 -d 10.0.36.4 -m connmark --mark 2 -m length --length :160 -j CLASSIFY --set-class 1:329
+/sbin/iptables -t mangle -A POSTROUTING -o eth0 -d 10.0.36.4 -m connmark --mark 2 -m length --length 160: -j CLASSIFY --set-class 1:330
+/sbin/iptables -t mangle -A POSTROUTING -o eth1 -d 10.0.36.4 -m connmark --mark 2 -m length --length :160 -j CLASSIFY --set-class 1:329
+/sbin/iptables -t mangle -A POSTROUTING -o eth1 -d 10.0.36.4 -m connmark --mark 2 -m length --length 160: -j CLASSIFY --set-class 1:330
+# host: dudeq (link: dsl1)
+/sbin/iptables -t mangle -A POSTROUTING -o eth0 -d 10.0.52.9 -m connmark --mark 1 -m length --length :160 -j CLASSIFY --set-class 1:332
+/sbin/iptables -t mangle -A POSTROUTING -o eth0 -d 10.0.52.9 -m connmark --mark 1 -m length --length 160: -j CLASSIFY --set-class 1:333
+/sbin/iptables -t mangle -A POSTROUTING -o eth1 -d 10.0.52.9 -m connmark --mark 1 -m length --length :160 -j CLASSIFY --set-class 1:332
+/sbin/iptables -t mangle -A POSTROUTING -o eth1 -d 10.0.52.9 -m connmark --mark 1 -m length --length 160: -j CLASSIFY --set-class 1:333
+# host: dudeq (link: dsl2)
+/sbin/iptables -t mangle -A POSTROUTING -o eth0 -d 10.0.52.9 -m connmark --mark 2 -m length --length :160 -j CLASSIFY --set-class 1:335
+/sbin/iptables -t mangle -A POSTROUTING -o eth0 -d 10.0.52.9 -m connmark --mark 2 -m length --length 160: -j CLASSIFY --set-class 1:336
+/sbin/iptables -t mangle -A POSTROUTING -o eth1 -d 10.0.52.9 -m connmark --mark 2 -m length --length :160 -j CLASSIFY --set-class 1:335
+/sbin/iptables -t mangle -A POSTROUTING -o eth1 -d 10.0.52.9 -m connmark --mark 2 -m length --length 160: -j CLASSIFY --set-class 1:336
+# host: england (link: dsl1)
+/sbin/iptables -t mangle -A POSTROUTING -o eth0 -d 10.0.44.6 -m connmark --mark 1 -m length --length :160 -j CLASSIFY --set-class 1:338
+/sbin/iptables -t mangle -A POSTROUTING -o eth0 -d 10.0.44.6 -m connmark --mark 1 -m length --length 160: -j CLASSIFY --set-class 1:339
+/sbin/iptables -t mangle -A POSTROUTING -o eth1 -d 10.0.44.6 -m connmark --mark 1 -m length --length :160 -j CLASSIFY --set-class 1:338
+/sbin/iptables -t mangle -A POSTROUTING -o eth1 -d 10.0.44.6 -m connmark --mark 1 -m length --length 160: -j CLASSIFY --set-class 1:339
+# host: england (link: dsl2)
+/sbin/iptables -t mangle -A POSTROUTING -o eth0 -d 10.0.44.6 -m connmark --mark 2 -m length --length :160 -j CLASSIFY --set-class 1:341
+/sbin/iptables -t mangle -A POSTROUTING -o eth0 -d 10.0.44.6 -m connmark --mark 2 -m length --length 160: -j CLASSIFY --set-class 1:342
+/sbin/iptables -t mangle -A POSTROUTING -o eth1 -d 10.0.44.6 -m connmark --mark 2 -m length --length :160 -j CLASSIFY --set-class 1:341
+/sbin/iptables -t mangle -A POSTROUTING -o eth1 -d 10.0.44.6 -m connmark --mark 2 -m length --length 160: -j CLASSIFY --set-class 1:342
+# host: ewelka (link: dsl1)
+/sbin/iptables -t mangle -A POSTROUTING -o eth0 -d 10.0.52.12 -m connmark --mark 1 -m length --length :160 -j CLASSIFY --set-class 1:344
+/sbin/iptables -t mangle -A POSTROUTING -o eth0 -d 10.0.52.12 -m connmark --mark 1 -m length --length 160: -j CLASSIFY --set-class 1:345
+/sbin/iptables -t mangle -A POSTROUTING -o eth1 -d 10.0.52.12 -m connmark --mark 1 -m length --length :160 -j CLASSIFY --set-class 1:344
+/sbin/iptables -t mangle -A POSTROUTING -o eth1 -d 10.0.52.12 -m connmark --mark 1 -m length --length 160: -j CLASSIFY --set-class 1:345
+# host: ewelka (link: dsl2)
+/sbin/iptables -t mangle -A POSTROUTING -o eth0 -d 10.0.52.12 -m connmark --mark 2 -m length --length :160 -j CLASSIFY --set-class 1:347
+/sbin/iptables -t mangle -A POSTROUTING -o eth0 -d 10.0.52.12 -m connmark --mark 2 -m length --length 160: -j CLASSIFY --set-class 1:348
+/sbin/iptables -t mangle -A POSTROUTING -o eth1 -d 10.0.52.12 -m connmark --mark 2 -m length --length :160 -j CLASSIFY --set-class 1:347
+/sbin/iptables -t mangle -A POSTROUTING -o eth1 -d 10.0.52.12 -m connmark --mark 2 -m length --length 160: -j CLASSIFY --set-class 1:348
+# host: ezechiel (link: dsl1)
+/sbin/iptables -t mangle -A POSTROUTING -o eth0 -d 10.0.72.13 -m connmark --mark 1 -m length --length :160 -j CLASSIFY --set-class 1:350
+/sbin/iptables -t mangle -A POSTROUTING -o eth0 -d 10.0.72.13 -m connmark --mark 1 -m length --length 160: -j CLASSIFY --set-class 1:351
+/sbin/iptables -t mangle -A POSTROUTING -o eth1 -d 10.0.72.13 -m connmark --mark 1 -m length --length :160 -j CLASSIFY --set-class 1:350
+/sbin/iptables -t mangle -A POSTROUTING -o eth1 -d 10.0.72.13 -m connmark --mark 1 -m length --length 160: -j CLASSIFY --set-class 1:351
+# host: ezechiel (link: dsl2)
+/sbin/iptables -t mangle -A POSTROUTING -o eth0 -d 10.0.72.13 -m connmark --mark 2 -m length --length :160 -j CLASSIFY --set-class 1:353
+/sbin/iptables -t mangle -A POSTROUTING -o eth0 -d 10.0.72.13 -m connmark --mark 2 -m length --length 160: -j CLASSIFY --set-class 1:354
+/sbin/iptables -t mangle -A POSTROUTING -o eth1 -d 10.0.72.13 -m connmark --mark 2 -m length --length :160 -j CLASSIFY --set-class 1:353
+/sbin/iptables -t mangle -A POSTROUTING -o eth1 -d 10.0.72.13 -m connmark --mark 2 -m length --length 160: -j CLASSIFY --set-class 1:354
+# host: fasolka (link: dsl1)
+/sbin/iptables -t mangle -A POSTROUTING -o eth0 -d 10.0.80.8 -m connmark --mark 1 -m length --length :160 -j CLASSIFY --set-class 1:356
+/sbin/iptables -t mangle -A POSTROUTING -o eth0 -d 10.0.80.8 -m connmark --mark 1 -m length --length 160: -j CLASSIFY --set-class 1:357
+/sbin/iptables -t mangle -A POSTROUTING -o eth1 -d 10.0.80.8 -m connmark --mark 1 -m length --length :160 -j CLASSIFY --set-class 1:356
+/sbin/iptables -t mangle -A POSTROUTING -o eth1 -d 10.0.80.8 -m connmark --mark 1 -m length --length 160: -j CLASSIFY --set-class 1:357
+# host: fasolka (link: dsl2)
+/sbin/iptables -t mangle -A POSTROUTING -o eth0 -d 10.0.80.8 -m connmark --mark 2 -m length --length :160 -j CLASSIFY --set-class 1:359
+/sbin/iptables -t mangle -A POSTROUTING -o eth0 -d 10.0.80.8 -m connmark --mark 2 -m length --length 160: -j CLASSIFY --set-class 1:360
+/sbin/iptables -t mangle -A POSTROUTING -o eth1 -d 10.0.80.8 -m connmark --mark 2 -m length --length :160 -j CLASSIFY --set-class 1:359
+/sbin/iptables -t mangle -A POSTROUTING -o eth1 -d 10.0.80.8 -m connmark --mark 2 -m length --length 160: -j CLASSIFY --set-class 1:360
+# host: feldi (link: dsl1)
+/sbin/iptables -t mangle -A POSTROUTING -o eth0 -d 10.0.64.6 -m connmark --mark 1 -m length --length :160 -j CLASSIFY --set-class 1:362
+/sbin/iptables -t mangle -A POSTROUTING -o eth0 -d 10.0.64.6 -m connmark --mark 1 -m length --length 160: -j CLASSIFY --set-class 1:363
+/sbin/iptables -t mangle -A POSTROUTING -o eth1 -d 10.0.64.6 -m connmark --mark 1 -m length --length :160 -j CLASSIFY --set-class 1:362
+/sbin/iptables -t mangle -A POSTROUTING -o eth1 -d 10.0.64.6 -m connmark --mark 1 -m length --length 160: -j CLASSIFY --set-class 1:363
+# host: feldi (link: dsl2)
+/sbin/iptables -t mangle -A POSTROUTING -o eth0 -d 10.0.64.6 -m connmark --mark 2 -m length --length :160 -j CLASSIFY --set-class 1:365
+/sbin/iptables -t mangle -A POSTROUTING -o eth0 -d 10.0.64.6 -m connmark --mark 2 -m length --length 160: -j CLASSIFY --set-class 1:366
+/sbin/iptables -t mangle -A POSTROUTING -o eth1 -d 10.0.64.6 -m connmark --mark 2 -m length --length :160 -j CLASSIFY --set-class 1:365
+/sbin/iptables -t mangle -A POSTROUTING -o eth1 -d 10.0.64.6 -m connmark --mark 2 -m length --length 160: -j CLASSIFY --set-class 1:366
+# host: fen (link: dsl1)
+/sbin/iptables -t mangle -A POSTROUTING -o eth0 -d 10.0.68.4 -m connmark --mark 1 -m length --length :160 -j CLASSIFY --set-class 1:368
+/sbin/iptables -t mangle -A POSTROUTING -o eth0 -d 10.0.68.4 -m connmark --mark 1 -m length --length 160: -j CLASSIFY --set-class 1:369
+/sbin/iptables -t mangle -A POSTROUTING -o eth1 -d 10.0.68.4 -m connmark --mark 1 -m length --length :160 -j CLASSIFY --set-class 1:368
+/sbin/iptables -t mangle -A POSTROUTING -o eth1 -d 10.0.68.4 -m connmark --mark 1 -m length --length 160: -j CLASSIFY --set-class 1:369
+# host: fen (link: dsl2)
+/sbin/iptables -t mangle -A POSTROUTING -o eth0 -d 10.0.68.4 -m connmark --mark 2 -m length --length :160 -j CLASSIFY --set-class 1:371
+/sbin/iptables -t mangle -A POSTROUTING -o eth0 -d 10.0.68.4 -m connmark --mark 2 -m length --length 160: -j CLASSIFY --set-class 1:372
+/sbin/iptables -t mangle -A POSTROUTING -o eth1 -d 10.0.68.4 -m connmark --mark 2 -m length --length :160 -j CLASSIFY --set-class 1:371
+/sbin/iptables -t mangle -A POSTROUTING -o eth1 -d 10.0.68.4 -m connmark --mark 2 -m length --length 160: -j CLASSIFY --set-class 1:372
+# host: fides (link: dsl1)
+/sbin/iptables -t mangle -A POSTROUTING -o eth0 -d 10.0.4.3 -m connmark --mark 1 -m length --length :160 -j CLASSIFY --set-class 1:374
+/sbin/iptables -t mangle -A POSTROUTING -o eth0 -d 10.0.4.3 -m connmark --mark 1 -m length --length 160: -j CLASSIFY --set-class 1:375
+/sbin/iptables -t mangle -A POSTROUTING -o eth1 -d 10.0.4.3 -m connmark --mark 1 -m length --length :160 -j CLASSIFY --set-class 1:374
+/sbin/iptables -t mangle -A POSTROUTING -o eth1 -d 10.0.4.3 -m connmark --mark 1 -m length --length 160: -j CLASSIFY --set-class 1:375
+# host: fides (link: dsl2)
+/sbin/iptables -t mangle -A POSTROUTING -o eth0 -d 10.0.4.3 -m connmark --mark 2 -m length --length :160 -j CLASSIFY --set-class 1:377
+/sbin/iptables -t mangle -A POSTROUTING -o eth0 -d 10.0.4.3 -m connmark --mark 2 -m length --length 160: -j CLASSIFY --set-class 1:378
+/sbin/iptables -t mangle -A POSTROUTING -o eth1 -d 10.0.4.3 -m connmark --mark 2 -m length --length :160 -j CLASSIFY --set-class 1:377
+/sbin/iptables -t mangle -A POSTROUTING -o eth1 -d 10.0.4.3 -m connmark --mark 2 -m length --length 160: -j CLASSIFY --set-class 1:378
+# host: figa (link: dsl1)
+/sbin/iptables -t mangle -A POSTROUTING -o eth0 -d 10.0.80.6 -m connmark --mark 1 -m length --length :160 -j CLASSIFY --set-class 1:380
+/sbin/iptables -t mangle -A POSTROUTING -o eth0 -d 10.0.80.6 -m connmark --mark 1 -m length --length 160: -j CLASSIFY --set-class 1:381
+/sbin/iptables -t mangle -A POSTROUTING -o eth1 -d 10.0.80.6 -m connmark --mark 1 -m length --length :160 -j CLASSIFY --set-class 1:380
+/sbin/iptables -t mangle -A POSTROUTING -o eth1 -d 10.0.80.6 -m connmark --mark 1 -m length --length 160: -j CLASSIFY --set-class 1:381
+# host: figa (link: dsl2)
+/sbin/iptables -t mangle -A POSTROUTING -o eth0 -d 10.0.80.6 -m connmark --mark 2 -m length --length :160 -j CLASSIFY --set-class 1:383
+/sbin/iptables -t mangle -A POSTROUTING -o eth0 -d 10.0.80.6 -m connmark --mark 2 -m length --length 160: -j CLASSIFY --set-class 1:384
+/sbin/iptables -t mangle -A POSTROUTING -o eth1 -d 10.0.80.6 -m connmark --mark 2 -m length --length :160 -j CLASSIFY --set-class 1:383
+/sbin/iptables -t mangle -A POSTROUTING -o eth1 -d 10.0.80.6 -m connmark --mark 2 -m length --length 160: -j CLASSIFY --set-class 1:384
+# host: filemonn (link: dsl1)
+/sbin/iptables -t mangle -A POSTROUTING -o eth0 -d 10.0.44.30 -m connmark --mark 1 -m length --length :160 -j CLASSIFY --set-class 1:386
+/sbin/iptables -t mangle -A POSTROUTING -o eth0 -d 10.0.44.30 -m connmark --mark 1 -m length --length 160: -j CLASSIFY --set-class 1:387
+/sbin/iptables -t mangle -A POSTROUTING -o eth1 -d 10.0.44.30 -m connmark --mark 1 -m length --length :160 -j CLASSIFY --set-class 1:386
+/sbin/iptables -t mangle -A POSTROUTING -o eth1 -d 10.0.44.30 -m connmark --mark 1 -m length --length 160: -j CLASSIFY --set-class 1:387
+# host: filemonn (link: dsl2)
+/sbin/iptables -t mangle -A POSTROUTING -o eth0 -d 10.0.44.30 -m connmark --mark 2 -m length --length :160 -j CLASSIFY --set-class 1:389
+/sbin/iptables -t mangle -A POSTROUTING -o eth0 -d 10.0.44.30 -m connmark --mark 2 -m length --length 160: -j CLASSIFY --set-class 1:390
+/sbin/iptables -t mangle -A POSTROUTING -o eth1 -d 10.0.44.30 -m connmark --mark 2 -m length --length :160 -j CLASSIFY --set-class 1:389
+/sbin/iptables -t mangle -A POSTROUTING -o eth1 -d 10.0.44.30 -m connmark --mark 2 -m length --length 160: -j CLASSIFY --set-class 1:390
+# host: gajda (link: dsl1)
+/sbin/iptables -t mangle -A POSTROUTING -o eth0 -d 10.0.28.20 -m connmark --mark 1 -m length --length :160 -j CLASSIFY --set-class 1:392
+/sbin/iptables -t mangle -A POSTROUTING -o eth0 -d 10.0.28.20 -m connmark --mark 1 -m length --length 160: -j CLASSIFY --set-class 1:393
+/sbin/iptables -t mangle -A POSTROUTING -o eth1 -d 10.0.28.20 -m connmark --mark 1 -m length --length :160 -j CLASSIFY --set-class 1:392
+/sbin/iptables -t mangle -A POSTROUTING -o eth1 -d 10.0.28.20 -m connmark --mark 1 -m length --length 160: -j CLASSIFY --set-class 1:393
+# host: gajda (link: dsl2)
+/sbin/iptables -t mangle -A POSTROUTING -o eth0 -d 10.0.28.20 -m connmark --mark 2 -m length --length :160 -j CLASSIFY --set-class 1:395
+/sbin/iptables -t mangle -A POSTROUTING -o eth0 -d 10.0.28.20 -m connmark --mark 2 -m length --length 160: -j CLASSIFY --set-class 1:396
+/sbin/iptables -t mangle -A POSTROUTING -o eth1 -d 10.0.28.20 -m connmark --mark 2 -m length --length :160 -j CLASSIFY --set-class 1:395
+/sbin/iptables -t mangle -A POSTROUTING -o eth1 -d 10.0.28.20 -m connmark --mark 2 -m length --length 160: -j CLASSIFY --set-class 1:396
+# host: garfield (link: dsl1)
+/sbin/iptables -t mangle -A POSTROUTING -o eth0 -d 10.0.56.9 -m connmark --mark 1 -m length --length :160 -j CLASSIFY --set-class 1:398
+/sbin/iptables -t mangle -A POSTROUTING -o eth0 -d 10.0.56.9 -m connmark --mark 1 -m length --length 160: -j CLASSIFY --set-class 1:399
+/sbin/iptables -t mangle -A POSTROUTING -o eth1 -d 10.0.56.9 -m connmark --mark 1 -m length --length :160 -j CLASSIFY --set-class 1:398
+/sbin/iptables -t mangle -A POSTROUTING -o eth1 -d 10.0.56.9 -m connmark --mark 1 -m length --length 160: -j CLASSIFY --set-class 1:399
+# host: garfield (link: dsl2)
+/sbin/iptables -t mangle -A POSTROUTING -o eth0 -d 10.0.56.9 -m connmark --mark 2 -m length --length :160 -j CLASSIFY --set-class 1:401
+/sbin/iptables -t mangle -A POSTROUTING -o eth0 -d 10.0.56.9 -m connmark --mark 2 -m length --length 160: -j CLASSIFY --set-class 1:402
+/sbin/iptables -t mangle -A POSTROUTING -o eth1 -d 10.0.56.9 -m connmark --mark 2 -m length --length :160 -j CLASSIFY --set-class 1:401
+/sbin/iptables -t mangle -A POSTROUTING -o eth1 -d 10.0.56.9 -m connmark --mark 2 -m length --length 160: -j CLASSIFY --set-class 1:402
+# host: gateway (link: dsl1)
+/sbin/iptables -t mangle -A POSTROUTING -o eth0 -d 10.0.8.8 -m connmark --mark 1 -m length --length :160 -j CLASSIFY --set-class 1:404
+/sbin/iptables -t mangle -A POSTROUTING -o eth0 -d 10.0.8.8 -m connmark --mark 1 -m length --length 160: -j CLASSIFY --set-class 1:405
+/sbin/iptables -t mangle -A POSTROUTING -o eth1 -d 10.0.8.8 -m connmark --mark 1 -m length --length :160 -j CLASSIFY --set-class 1:404
+/sbin/iptables -t mangle -A POSTROUTING -o eth1 -d 10.0.8.8 -m connmark --mark 1 -m length --length 160: -j CLASSIFY --set-class 1:405
+# host: gateway (link: dsl2)
+/sbin/iptables -t mangle -A POSTROUTING -o eth0 -d 10.0.8.8 -m connmark --mark 2 -m length --length :160 -j CLASSIFY --set-class 1:407
+/sbin/iptables -t mangle -A POSTROUTING -o eth0 -d 10.0.8.8 -m connmark --mark 2 -m length --length 160: -j CLASSIFY --set-class 1:408
+/sbin/iptables -t mangle -A POSTROUTING -o eth1 -d 10.0.8.8 -m connmark --mark 2 -m length --length :160 -j CLASSIFY --set-class 1:407
+/sbin/iptables -t mangle -A POSTROUTING -o eth1 -d 10.0.8.8 -m connmark --mark 2 -m length --length 160: -j CLASSIFY --set-class 1:408
+# host: glynis (link: dsl1)
+/sbin/iptables -t mangle -A POSTROUTING -o eth0 -d 10.0.44.11 -m connmark --mark 1 -m length --length :160 -j CLASSIFY --set-class 1:410
+/sbin/iptables -t mangle -A POSTROUTING -o eth0 -d 10.0.44.11 -m connmark --mark 1 -m length --length 160: -j CLASSIFY --set-class 1:411
+/sbin/iptables -t mangle -A POSTROUTING -o eth1 -d 10.0.44.11 -m connmark --mark 1 -m length --length :160 -j CLASSIFY --set-class 1:410
+/sbin/iptables -t mangle -A POSTROUTING -o eth1 -d 10.0.44.11 -m connmark --mark 1 -m length --length 160: -j CLASSIFY --set-class 1:411
+# host: glynis (link: dsl2)
+/sbin/iptables -t mangle -A POSTROUTING -o eth0 -d 10.0.44.11 -m connmark --mark 2 -m length --length :160 -j CLASSIFY --set-class 1:413
+/sbin/iptables -t mangle -A POSTROUTING -o eth0 -d 10.0.44.11 -m connmark --mark 2 -m length --length 160: -j CLASSIFY --set-class 1:414
+/sbin/iptables -t mangle -A POSTROUTING -o eth1 -d 10.0.44.11 -m connmark --mark 2 -m length --length :160 -j CLASSIFY --set-class 1:413
+/sbin/iptables -t mangle -A POSTROUTING -o eth1 -d 10.0.44.11 -m connmark --mark 2 -m length --length 160: -j CLASSIFY --set-class 1:414
+# host: golemy (link: dsl1)
+/sbin/iptables -t mangle -A POSTROUTING -o eth0 -d 10.0.12.34 -m connmark --mark 1 -m length --length :160 -j CLASSIFY --set-class 1:416
+/sbin/iptables -t mangle -A POSTROUTING -o eth0 -d 10.0.12.34 -m connmark --mark 1 -m length --length 160: -j CLASSIFY --set-class 1:417
+/sbin/iptables -t mangle -A POSTROUTING -o eth1 -d 10.0.12.34 -m connmark --mark 1 -m length --length :160 -j CLASSIFY --set-class 1:416
+/sbin/iptables -t mangle -A POSTROUTING -o eth1 -d 10.0.12.34 -m connmark --mark 1 -m length --length 160: -j CLASSIFY --set-class 1:417
+# host: golemy (link: dsl2)
+/sbin/iptables -t mangle -A POSTROUTING -o eth0 -d 10.0.12.34 -m connmark --mark 2 -m length --length :160 -j CLASSIFY --set-class 1:419
+/sbin/iptables -t mangle -A POSTROUTING -o eth0 -d 10.0.12.34 -m connmark --mark 2 -m length --length 160: -j CLASSIFY --set-class 1:420
+/sbin/iptables -t mangle -A POSTROUTING -o eth1 -d 10.0.12.34 -m connmark --mark 2 -m length --length :160 -j CLASSIFY --set-class 1:419
+/sbin/iptables -t mangle -A POSTROUTING -o eth1 -d 10.0.12.34 -m connmark --mark 2 -m length --length 160: -j CLASSIFY --set-class 1:420
+# host: goosia (link: dsl1)
+/sbin/iptables -t mangle -A POSTROUTING -o eth0 -d 10.0.20.6 -m connmark --mark 1 -m length --length :160 -j CLASSIFY --set-class 1:422
+/sbin/iptables -t mangle -A POSTROUTING -o eth0 -d 10.0.20.6 -m connmark --mark 1 -m length --length 160: -j CLASSIFY --set-class 1:423
+/sbin/iptables -t mangle -A POSTROUTING -o eth1 -d 10.0.20.6 -m connmark --mark 1 -m length --length :160 -j CLASSIFY --set-class 1:422
+/sbin/iptables -t mangle -A POSTROUTING -o eth1 -d 10.0.20.6 -m connmark --mark 1 -m length --length 160: -j CLASSIFY --set-class 1:423
+# host: goosia (link: dsl2)
+/sbin/iptables -t mangle -A POSTROUTING -o eth0 -d 10.0.20.6 -m connmark --mark 2 -m length --length :160 -j CLASSIFY --set-class 1:425
+/sbin/iptables -t mangle -A POSTROUTING -o eth0 -d 10.0.20.6 -m connmark --mark 2 -m length --length 160: -j CLASSIFY --set-class 1:426
+/sbin/iptables -t mangle -A POSTROUTING -o eth1 -d 10.0.20.6 -m connmark --mark 2 -m length --length :160 -j CLASSIFY --set-class 1:425
+/sbin/iptables -t mangle -A POSTROUTING -o eth1 -d 10.0.20.6 -m connmark --mark 2 -m length --length 160: -j CLASSIFY --set-class 1:426
+# host: gordon (link: dsl1)
+/sbin/iptables -t mangle -A POSTROUTING -o eth0 -d 10.0.68.5 -m connmark --mark 1 -m length --length :160 -j CLASSIFY --set-class 1:428
+/sbin/iptables -t mangle -A POSTROUTING -o eth0 -d 10.0.68.5 -m connmark --mark 1 -m length --length 160: -j CLASSIFY --set-class 1:429
+/sbin/iptables -t mangle -A POSTROUTING -o eth1 -d 10.0.68.5 -m connmark --mark 1 -m length --length :160 -j CLASSIFY --set-class 1:428
+/sbin/iptables -t mangle -A POSTROUTING -o eth1 -d 10.0.68.5 -m connmark --mark 1 -m length --length 160: -j CLASSIFY --set-class 1:429
+# host: gordon (link: dsl2)
+/sbin/iptables -t mangle -A POSTROUTING -o eth0 -d 10.0.68.5 -m connmark --mark 2 -m length --length :160 -j CLASSIFY --set-class 1:431
+/sbin/iptables -t mangle -A POSTROUTING -o eth0 -d 10.0.68.5 -m connmark --mark 2 -m length --length 160: -j CLASSIFY --set-class 1:432
+/sbin/iptables -t mangle -A POSTROUTING -o eth1 -d 10.0.68.5 -m connmark --mark 2 -m length --length :160 -j CLASSIFY --set-class 1:431
+/sbin/iptables -t mangle -A POSTROUTING -o eth1 -d 10.0.68.5 -m connmark --mark 2 -m length --length 160: -j CLASSIFY --set-class 1:432
+# host: gosia (link: dsl1)
+/sbin/iptables -t mangle -A POSTROUTING -o eth0 -d 10.0.28.4 -m connmark --mark 1 -m length --length :160 -j CLASSIFY --set-class 1:434
+/sbin/iptables -t mangle -A POSTROUTING -o eth0 -d 10.0.28.4 -m connmark --mark 1 -m length --length 160: -j CLASSIFY --set-class 1:435
+/sbin/iptables -t mangle -A POSTROUTING -o eth1 -d 10.0.28.4 -m connmark --mark 1 -m length --length :160 -j CLASSIFY --set-class 1:434
+/sbin/iptables -t mangle -A POSTROUTING -o eth1 -d 10.0.28.4 -m connmark --mark 1 -m length --length 160: -j CLASSIFY --set-class 1:435
+# host: gosia (link: dsl2)
+/sbin/iptables -t mangle -A POSTROUTING -o eth0 -d 10.0.28.4 -m connmark --mark 2 -m length --length :160 -j CLASSIFY --set-class 1:437
+/sbin/iptables -t mangle -A POSTROUTING -o eth0 -d 10.0.28.4 -m connmark --mark 2 -m length --length 160: -j CLASSIFY --set-class 1:438
+/sbin/iptables -t mangle -A POSTROUTING -o eth1 -d 10.0.28.4 -m connmark --mark 2 -m length --length :160 -j CLASSIFY --set-class 1:437
+/sbin/iptables -t mangle -A POSTROUTING -o eth1 -d 10.0.28.4 -m connmark --mark 2 -m length --length 160: -j CLASSIFY --set-class 1:438
+# host: greg (link: dsl1)
+/sbin/iptables -t mangle -A POSTROUTING -o eth0 -d 10.0.16.7 -m connmark --mark 1 -m length --length :160 -j CLASSIFY --set-class 1:440
+/sbin/iptables -t mangle -A POSTROUTING -o eth0 -d 10.0.16.7 -m connmark --mark 1 -m length --length 160: -j CLASSIFY --set-class 1:441
+/sbin/iptables -t mangle -A POSTROUTING -o eth1 -d 10.0.16.7 -m connmark --mark 1 -m length --length :160 -j CLASSIFY --set-class 1:440
+/sbin/iptables -t mangle -A POSTROUTING -o eth1 -d 10.0.16.7 -m connmark --mark 1 -m length --length 160: -j CLASSIFY --set-class 1:441
+# host: greg (link: dsl2)
+/sbin/iptables -t mangle -A POSTROUTING -o eth0 -d 10.0.16.7 -m connmark --mark 2 -m length --length :160 -j CLASSIFY --set-class 1:443
+/sbin/iptables -t mangle -A POSTROUTING -o eth0 -d 10.0.16.7 -m connmark --mark 2 -m length --length 160: -j CLASSIFY --set-class 1:444
+/sbin/iptables -t mangle -A POSTROUTING -o eth1 -d 10.0.16.7 -m connmark --mark 2 -m length --length :160 -j CLASSIFY --set-class 1:443
+/sbin/iptables -t mangle -A POSTROUTING -o eth1 -d 10.0.16.7 -m connmark --mark 2 -m length --length 160: -j CLASSIFY --set-class 1:444
+# host: gremlin (link: dsl1)
+/sbin/iptables -t mangle -A POSTROUTING -o eth0 -d 10.0.68.6 -m connmark --mark 1 -m length --length :160 -j CLASSIFY --set-class 1:446
+/sbin/iptables -t mangle -A POSTROUTING -o eth0 -d 10.0.68.6 -m connmark --mark 1 -m length --length 160: -j CLASSIFY --set-class 1:447
+/sbin/iptables -t mangle -A POSTROUTING -o eth1 -d 10.0.68.6 -m connmark --mark 1 -m length --length :160 -j CLASSIFY --set-class 1:446
+/sbin/iptables -t mangle -A POSTROUTING -o eth1 -d 10.0.68.6 -m connmark --mark 1 -m length --length 160: -j CLASSIFY --set-class 1:447
+# host: gremlin (link: dsl2)
+/sbin/iptables -t mangle -A POSTROUTING -o eth0 -d 10.0.68.6 -m connmark --mark 2 -m length --length :160 -j CLASSIFY --set-class 1:449
+/sbin/iptables -t mangle -A POSTROUTING -o eth0 -d 10.0.68.6 -m connmark --mark 2 -m length --length 160: -j CLASSIFY --set-class 1:450
+/sbin/iptables -t mangle -A POSTROUTING -o eth1 -d 10.0.68.6 -m connmark --mark 2 -m length --length :160 -j CLASSIFY --set-class 1:449
+/sbin/iptables -t mangle -A POSTROUTING -o eth1 -d 10.0.68.6 -m connmark --mark 2 -m length --length 160: -j CLASSIFY --set-class 1:450
+# host: h3000gt (link: dsl1)
+/sbin/iptables -t mangle -A POSTROUTING -o eth0 -d 10.0.44.1 -m connmark --mark 1 -m length --length :160 -j CLASSIFY --set-class 1:452
+/sbin/iptables -t mangle -A POSTROUTING -o eth0 -d 10.0.44.1 -m connmark --mark 1 -m length --length 160: -j CLASSIFY --set-class 1:453
+/sbin/iptables -t mangle -A POSTROUTING -o eth1 -d 10.0.44.1 -m connmark --mark 1 -m length --length :160 -j CLASSIFY --set-class 1:452
+/sbin/iptables -t mangle -A POSTROUTING -o eth1 -d 10.0.44.1 -m connmark --mark 1 -m length --length 160: -j CLASSIFY --set-class 1:453
+# host: h3000gt (link: dsl2)
+/sbin/iptables -t mangle -A POSTROUTING -o eth0 -d 10.0.44.1 -m connmark --mark 2 -m length --length :160 -j CLASSIFY --set-class 1:455
+/sbin/iptables -t mangle -A POSTROUTING -o eth0 -d 10.0.44.1 -m connmark --mark 2 -m length --length 160: -j CLASSIFY --set-class 1:456
+/sbin/iptables -t mangle -A POSTROUTING -o eth1 -d 10.0.44.1 -m connmark --mark 2 -m length --length :160 -j CLASSIFY --set-class 1:455
+/sbin/iptables -t mangle -A POSTROUTING -o eth1 -d 10.0.44.1 -m connmark --mark 2 -m length --length 160: -j CLASSIFY --set-class 1:456
+# host: h32m27 (link: dsl1)
+/sbin/iptables -t mangle -A POSTROUTING -o eth0 -d 10.0.44.28 -m connmark --mark 1 -m length --length :160 -j CLASSIFY --set-class 1:458
+/sbin/iptables -t mangle -A POSTROUTING -o eth0 -d 10.0.44.28 -m connmark --mark 1 -m length --length 160: -j CLASSIFY --set-class 1:459
+/sbin/iptables -t mangle -A POSTROUTING -o eth1 -d 10.0.44.28 -m connmark --mark 1 -m length --length :160 -j CLASSIFY --set-class 1:458
+/sbin/iptables -t mangle -A POSTROUTING -o eth1 -d 10.0.44.28 -m connmark --mark 1 -m length --length 160: -j CLASSIFY --set-class 1:459
+# host: h32m27 (link: dsl2)
+/sbin/iptables -t mangle -A POSTROUTING -o eth0 -d 10.0.44.28 -m connmark --mark 2 -m length --length :160 -j CLASSIFY --set-class 1:461
+/sbin/iptables -t mangle -A POSTROUTING -o eth0 -d 10.0.44.28 -m connmark --mark 2 -m length --length 160: -j CLASSIFY --set-class 1:462
+/sbin/iptables -t mangle -A POSTROUTING -o eth1 -d 10.0.44.28 -m connmark --mark 2 -m length --length :160 -j CLASSIFY --set-class 1:461
+/sbin/iptables -t mangle -A POSTROUTING -o eth1 -d 10.0.44.28 -m connmark --mark 2 -m length --length 160: -j CLASSIFY --set-class 1:462
+# host: hera (link: dsl1)
+/sbin/iptables -t mangle -A POSTROUTING -o eth0 -d 10.0.64.8 -m connmark --mark 1 -m length --length :160 -j CLASSIFY --set-class 1:464
+/sbin/iptables -t mangle -A POSTROUTING -o eth0 -d 10.0.64.8 -m connmark --mark 1 -m length --length 160: -j CLASSIFY --set-class 1:465
+/sbin/iptables -t mangle -A POSTROUTING -o eth1 -d 10.0.64.8 -m connmark --mark 1 -m length --length :160 -j CLASSIFY --set-class 1:464
+/sbin/iptables -t mangle -A POSTROUTING -o eth1 -d 10.0.64.8 -m connmark --mark 1 -m length --length 160: -j CLASSIFY --set-class 1:465
+# host: hera (link: dsl2)
+/sbin/iptables -t mangle -A POSTROUTING -o eth0 -d 10.0.64.8 -m connmark --mark 2 -m length --length :160 -j CLASSIFY --set-class 1:467
+/sbin/iptables -t mangle -A POSTROUTING -o eth0 -d 10.0.64.8 -m connmark --mark 2 -m length --length 160: -j CLASSIFY --set-class 1:468
+/sbin/iptables -t mangle -A POSTROUTING -o eth1 -d 10.0.64.8 -m connmark --mark 2 -m length --length :160 -j CLASSIFY --set-class 1:467
+/sbin/iptables -t mangle -A POSTROUTING -o eth1 -d 10.0.64.8 -m connmark --mark 2 -m length --length 160: -j CLASSIFY --set-class 1:468
+# host: hermanmuller (link: dsl1)
+/sbin/iptables -t mangle -A POSTROUTING -o eth0 -d 10.0.28.8 -m connmark --mark 1 -m length --length :160 -j CLASSIFY --set-class 1:470
+/sbin/iptables -t mangle -A POSTROUTING -o eth0 -d 10.0.28.8 -m connmark --mark 1 -m length --length 160: -j CLASSIFY --set-class 1:471
+/sbin/iptables -t mangle -A POSTROUTING -o eth1 -d 10.0.28.8 -m connmark --mark 1 -m length --length :160 -j CLASSIFY --set-class 1:470
+/sbin/iptables -t mangle -A POSTROUTING -o eth1 -d 10.0.28.8 -m connmark --mark 1 -m length --length 160: -j CLASSIFY --set-class 1:471
+# host: hermanmuller (link: dsl2)
+/sbin/iptables -t mangle -A POSTROUTING -o eth0 -d 10.0.28.8 -m connmark --mark 2 -m length --length :160 -j CLASSIFY --set-class 1:473
+/sbin/iptables -t mangle -A POSTROUTING -o eth0 -d 10.0.28.8 -m connmark --mark 2 -m length --length 160: -j CLASSIFY --set-class 1:474
+/sbin/iptables -t mangle -A POSTROUTING -o eth1 -d 10.0.28.8 -m connmark --mark 2 -m length --length :160 -j CLASSIFY --set-class 1:473
+/sbin/iptables -t mangle -A POSTROUTING -o eth1 -d 10.0.28.8 -m connmark --mark 2 -m length --length 160: -j CLASSIFY --set-class 1:474
+# host: ifs (link: dsl1)
+/sbin/iptables -t mangle -A POSTROUTING -o eth0 -d 10.0.16.9 -m connmark --mark 1 -m length --length :160 -j CLASSIFY --set-class 1:476
+/sbin/iptables -t mangle -A POSTROUTING -o eth0 -d 10.0.16.9 -m connmark --mark 1 -m length --length 160: -j CLASSIFY --set-class 1:477
+/sbin/iptables -t mangle -A POSTROUTING -o eth1 -d 10.0.16.9 -m connmark --mark 1 -m length --length :160 -j CLASSIFY --set-class 1:476
+/sbin/iptables -t mangle -A POSTROUTING -o eth1 -d 10.0.16.9 -m connmark --mark 1 -m length --length 160: -j CLASSIFY --set-class 1:477
+# host: ifs (link: dsl2)
+/sbin/iptables -t mangle -A POSTROUTING -o eth0 -d 10.0.16.9 -m connmark --mark 2 -m length --length :160 -j CLASSIFY --set-class 1:479
+/sbin/iptables -t mangle -A POSTROUTING -o eth0 -d 10.0.16.9 -m connmark --mark 2 -m length --length 160: -j CLASSIFY --set-class 1:480
+/sbin/iptables -t mangle -A POSTROUTING -o eth1 -d 10.0.16.9 -m connmark --mark 2 -m length --length :160 -j CLASSIFY --set-class 1:479
+/sbin/iptables -t mangle -A POSTROUTING -o eth1 -d 10.0.16.9 -m connmark --mark 2 -m length --length 160: -j CLASSIFY --set-class 1:480
+# host: ingus (link: dsl1)
+/sbin/iptables -t mangle -A POSTROUTING -o eth0 -d 10.0.12.9 -m connmark --mark 1 -m length --length :160 -j CLASSIFY --set-class 1:482
+/sbin/iptables -t mangle -A POSTROUTING -o eth0 -d 10.0.12.9 -m connmark --mark 1 -m length --length 160: -j CLASSIFY --set-class 1:483
+/sbin/iptables -t mangle -A POSTROUTING -o eth1 -d 10.0.12.9 -m connmark --mark 1 -m length --length :160 -j CLASSIFY --set-class 1:482
+/sbin/iptables -t mangle -A POSTROUTING -o eth1 -d 10.0.12.9 -m connmark --mark 1 -m length --length 160: -j CLASSIFY --set-class 1:483
+# host: ingus (link: dsl2)
+/sbin/iptables -t mangle -A POSTROUTING -o eth0 -d 10.0.12.9 -m connmark --mark 2 -m length --length :160 -j CLASSIFY --set-class 1:485
+/sbin/iptables -t mangle -A POSTROUTING -o eth0 -d 10.0.12.9 -m connmark --mark 2 -m length --length 160: -j CLASSIFY --set-class 1:486
+/sbin/iptables -t mangle -A POSTROUTING -o eth1 -d 10.0.12.9 -m connmark --mark 2 -m length --length :160 -j CLASSIFY --set-class 1:485
+/sbin/iptables -t mangle -A POSTROUTING -o eth1 -d 10.0.12.9 -m connmark --mark 2 -m length --length 160: -j CLASSIFY --set-class 1:486
+# host: italia (link: dsl1)
+/sbin/iptables -t mangle -A POSTROUTING -o eth0 -d 10.0.16.10 -m connmark --mark 1 -m length --length :160 -j CLASSIFY --set-class 1:488
+/sbin/iptables -t mangle -A POSTROUTING -o eth0 -d 10.0.16.10 -m connmark --mark 1 -m length --length 160: -j CLASSIFY --set-class 1:489
+/sbin/iptables -t mangle -A POSTROUTING -o eth1 -d 10.0.16.10 -m connmark --mark 1 -m length --length :160 -j CLASSIFY --set-class 1:488
+/sbin/iptables -t mangle -A POSTROUTING -o eth1 -d 10.0.16.10 -m connmark --mark 1 -m length --length 160: -j CLASSIFY --set-class 1:489
+# host: italia (link: dsl2)
+/sbin/iptables -t mangle -A POSTROUTING -o eth0 -d 10.0.16.10 -m connmark --mark 2 -m length --length :160 -j CLASSIFY --set-class 1:491
+/sbin/iptables -t mangle -A POSTROUTING -o eth0 -d 10.0.16.10 -m connmark --mark 2 -m length --length 160: -j CLASSIFY --set-class 1:492
+/sbin/iptables -t mangle -A POSTROUTING -o eth1 -d 10.0.16.10 -m connmark --mark 2 -m length --length :160 -j CLASSIFY --set-class 1:491
+/sbin/iptables -t mangle -A POSTROUTING -o eth1 -d 10.0.16.10 -m connmark --mark 2 -m length --length 160: -j CLASSIFY --set-class 1:492
+# host: jacek (link: dsl1)
+/sbin/iptables -t mangle -A POSTROUTING -o eth0 -d 10.0.76.5 -m connmark --mark 1 -m length --length :160 -j CLASSIFY --set-class 1:494
+/sbin/iptables -t mangle -A POSTROUTING -o eth0 -d 10.0.76.5 -m connmark --mark 1 -m length --length 160: -j CLASSIFY --set-class 1:495
+/sbin/iptables -t mangle -A POSTROUTING -o eth1 -d 10.0.76.5 -m connmark --mark 1 -m length --length :160 -j CLASSIFY --set-class 1:494
+/sbin/iptables -t mangle -A POSTROUTING -o eth1 -d 10.0.76.5 -m connmark --mark 1 -m length --length 160: -j CLASSIFY --set-class 1:495
+# host: jacek (link: dsl2)
+/sbin/iptables -t mangle -A POSTROUTING -o eth0 -d 10.0.76.5 -m connmark --mark 2 -m length --length :160 -j CLASSIFY --set-class 1:497
+/sbin/iptables -t mangle -A POSTROUTING -o eth0 -d 10.0.76.5 -m connmark --mark 2 -m length --length 160: -j CLASSIFY --set-class 1:498
+/sbin/iptables -t mangle -A POSTROUTING -o eth1 -d 10.0.76.5 -m connmark --mark 2 -m length --length :160 -j CLASSIFY --set-class 1:497
+/sbin/iptables -t mangle -A POSTROUTING -o eth1 -d 10.0.76.5 -m connmark --mark 2 -m length --length 160: -j CLASSIFY --set-class 1:498
+# host: jadzia (link: dsl1)
+/sbin/iptables -t mangle -A POSTROUTING -o eth0 -d 10.0.8.35 -m connmark --mark 1 -m length --length :160 -j CLASSIFY --set-class 1:500
+/sbin/iptables -t mangle -A POSTROUTING -o eth0 -d 10.0.8.35 -m connmark --mark 1 -m length --length 160: -j CLASSIFY --set-class 1:501
+/sbin/iptables -t mangle -A POSTROUTING -o eth1 -d 10.0.8.35 -m connmark --mark 1 -m length --length :160 -j CLASSIFY --set-class 1:500
+/sbin/iptables -t mangle -A POSTROUTING -o eth1 -d 10.0.8.35 -m connmark --mark 1 -m length --length 160: -j CLASSIFY --set-class 1:501
+# host: jadzia (link: dsl2)
+/sbin/iptables -t mangle -A POSTROUTING -o eth0 -d 10.0.8.35 -m connmark --mark 2 -m length --length :160 -j CLASSIFY --set-class 1:503
+/sbin/iptables -t mangle -A POSTROUTING -o eth0 -d 10.0.8.35 -m connmark --mark 2 -m length --length 160: -j CLASSIFY --set-class 1:504
+/sbin/iptables -t mangle -A POSTROUTING -o eth1 -d 10.0.8.35 -m connmark --mark 2 -m length --length :160 -j CLASSIFY --set-class 1:503
+/sbin/iptables -t mangle -A POSTROUTING -o eth1 -d 10.0.8.35 -m connmark --mark 2 -m length --length 160: -j CLASSIFY --set-class 1:504
+# host: jagoda (link: dsl1)
+/sbin/iptables -t mangle -A POSTROUTING -o eth0 -d 10.0.44.31 -m connmark --mark 1 -m length --length :160 -j CLASSIFY --set-class 1:506
+/sbin/iptables -t mangle -A POSTROUTING -o eth0 -d 10.0.44.31 -m connmark --mark 1 -m length --length 160: -j CLASSIFY --set-class 1:507
+/sbin/iptables -t mangle -A POSTROUTING -o eth1 -d 10.0.44.31 -m connmark --mark 1 -m length --length :160 -j CLASSIFY --set-class 1:506
+/sbin/iptables -t mangle -A POSTROUTING -o eth1 -d 10.0.44.31 -m connmark --mark 1 -m length --length 160: -j CLASSIFY --set-class 1:507
+# host: jagoda (link: dsl2)
+/sbin/iptables -t mangle -A POSTROUTING -o eth0 -d 10.0.44.31 -m connmark --mark 2 -m length --length :160 -j CLASSIFY --set-class 1:509
+/sbin/iptables -t mangle -A POSTROUTING -o eth0 -d 10.0.44.31 -m connmark --mark 2 -m length --length 160: -j CLASSIFY --set-class 1:510
+/sbin/iptables -t mangle -A POSTROUTING -o eth1 -d 10.0.44.31 -m connmark --mark 2 -m length --length :160 -j CLASSIFY --set-class 1:509
+/sbin/iptables -t mangle -A POSTROUTING -o eth1 -d 10.0.44.31 -m connmark --mark 2 -m length --length 160: -j CLASSIFY --set-class 1:510
+# host: janda (link: dsl1)
+/sbin/iptables -t mangle -A POSTROUTING -o eth0 -d 10.0.52.18 -m connmark --mark 1 -m length --length :160 -j CLASSIFY --set-class 1:512
+/sbin/iptables -t mangle -A POSTROUTING -o eth0 -d 10.0.52.18 -m connmark --mark 1 -m length --length 160: -j CLASSIFY --set-class 1:513
+/sbin/iptables -t mangle -A POSTROUTING -o eth1 -d 10.0.52.18 -m connmark --mark 1 -m length --length :160 -j CLASSIFY --set-class 1:512
+/sbin/iptables -t mangle -A POSTROUTING -o eth1 -d 10.0.52.18 -m connmark --mark 1 -m length --length 160: -j CLASSIFY --set-class 1:513
+# host: janda (link: dsl2)
+/sbin/iptables -t mangle -A POSTROUTING -o eth0 -d 10.0.52.18 -m connmark --mark 2 -m length --length :160 -j CLASSIFY --set-class 1:515
+/sbin/iptables -t mangle -A POSTROUTING -o eth0 -d 10.0.52.18 -m connmark --mark 2 -m length --length 160: -j CLASSIFY --set-class 1:516
+/sbin/iptables -t mangle -A POSTROUTING -o eth1 -d 10.0.52.18 -m connmark --mark 2 -m length --length :160 -j CLASSIFY --set-class 1:515
+/sbin/iptables -t mangle -A POSTROUTING -o eth1 -d 10.0.52.18 -m connmark --mark 2 -m length --length 160: -j CLASSIFY --set-class 1:516
+# host: jank638 (link: dsl1)
+/sbin/iptables -t mangle -A POSTROUTING -o eth0 -d 10.0.52.19 -m connmark --mark 1 -m length --length :160 -j CLASSIFY --set-class 1:518
+/sbin/iptables -t mangle -A POSTROUTING -o eth0 -d 10.0.52.19 -m connmark --mark 1 -m length --length 160: -j CLASSIFY --set-class 1:519
+/sbin/iptables -t mangle -A POSTROUTING -o eth1 -d 10.0.52.19 -m connmark --mark 1 -m length --length :160 -j CLASSIFY --set-class 1:518
+/sbin/iptables -t mangle -A POSTROUTING -o eth1 -d 10.0.52.19 -m connmark --mark 1 -m length --length 160: -j CLASSIFY --set-class 1:519
+# host: jank638 (link: dsl2)
+/sbin/iptables -t mangle -A POSTROUTING -o eth0 -d 10.0.52.19 -m connmark --mark 2 -m length --length :160 -j CLASSIFY --set-class 1:521
+/sbin/iptables -t mangle -A POSTROUTING -o eth0 -d 10.0.52.19 -m connmark --mark 2 -m length --length 160: -j CLASSIFY --set-class 1:522
+/sbin/iptables -t mangle -A POSTROUTING -o eth1 -d 10.0.52.19 -m connmark --mark 2 -m length --length :160 -j CLASSIFY --set-class 1:521
+/sbin/iptables -t mangle -A POSTROUTING -o eth1 -d 10.0.52.19 -m connmark --mark 2 -m length --length 160: -j CLASSIFY --set-class 1:522
+# host: jedik (link: dsl1)
+/sbin/iptables -t mangle -A POSTROUTING -o eth0 -d 10.0.80.13 -m connmark --mark 1 -m length --length :160 -j CLASSIFY --set-class 1:524
+/sbin/iptables -t mangle -A POSTROUTING -o eth0 -d 10.0.80.13 -m connmark --mark 1 -m length --length 160: -j CLASSIFY --set-class 1:525
+/sbin/iptables -t mangle -A POSTROUTING -o eth1 -d 10.0.80.13 -m connmark --mark 1 -m length --length :160 -j CLASSIFY --set-class 1:524
+/sbin/iptables -t mangle -A POSTROUTING -o eth1 -d 10.0.80.13 -m connmark --mark 1 -m length --length 160: -j CLASSIFY --set-class 1:525
+# host: jedik (link: dsl2)
+/sbin/iptables -t mangle -A POSTROUTING -o eth0 -d 10.0.80.13 -m connmark --mark 2 -m length --length :160 -j CLASSIFY --set-class 1:527
+/sbin/iptables -t mangle -A POSTROUTING -o eth0 -d 10.0.80.13 -m connmark --mark 2 -m length --length 160: -j CLASSIFY --set-class 1:528
+/sbin/iptables -t mangle -A POSTROUTING -o eth1 -d 10.0.80.13 -m connmark --mark 2 -m length --length :160 -j CLASSIFY --set-class 1:527
+/sbin/iptables -t mangle -A POSTROUTING -o eth1 -d 10.0.80.13 -m connmark --mark 2 -m length --length 160: -j CLASSIFY --set-class 1:528
+# host: jerry (link: dsl1)
+/sbin/iptables -t mangle -A POSTROUTING -o eth0 -d 10.0.8.10 -m connmark --mark 1 -m length --length :160 -j CLASSIFY --set-class 1:530
+/sbin/iptables -t mangle -A POSTROUTING -o eth0 -d 10.0.8.10 -m connmark --mark 1 -m length --length 160: -j CLASSIFY --set-class 1:531
+/sbin/iptables -t mangle -A POSTROUTING -o eth1 -d 10.0.8.10 -m connmark --mark 1 -m length --length :160 -j CLASSIFY --set-class 1:530
+/sbin/iptables -t mangle -A POSTROUTING -o eth1 -d 10.0.8.10 -m connmark --mark 1 -m length --length 160: -j CLASSIFY --set-class 1:531
+# host: jerry (link: dsl2)
+/sbin/iptables -t mangle -A POSTROUTING -o eth0 -d 10.0.8.10 -m connmark --mark 2 -m length --length :160 -j CLASSIFY --set-class 1:533
+/sbin/iptables -t mangle -A POSTROUTING -o eth0 -d 10.0.8.10 -m connmark --mark 2 -m length --length 160: -j CLASSIFY --set-class 1:534
+/sbin/iptables -t mangle -A POSTROUTING -o eth1 -d 10.0.8.10 -m connmark --mark 2 -m length --length :160 -j CLASSIFY --set-class 1:533
+/sbin/iptables -t mangle -A POSTROUTING -o eth1 -d 10.0.8.10 -m connmark --mark 2 -m length --length 160: -j CLASSIFY --set-class 1:534
+# host: jfk (link: dsl1)
+/sbin/iptables -t mangle -A POSTROUTING -o eth0 -d 10.0.12.32 -m connmark --mark 1 -m length --length :160 -j CLASSIFY --set-class 1:536
+/sbin/iptables -t mangle -A POSTROUTING -o eth0 -d 10.0.12.32 -m connmark --mark 1 -m length --length 160: -j CLASSIFY --set-class 1:537
+/sbin/iptables -t mangle -A POSTROUTING -o eth1 -d 10.0.12.32 -m connmark --mark 1 -m length --length :160 -j CLASSIFY --set-class 1:536
+/sbin/iptables -t mangle -A POSTROUTING -o eth1 -d 10.0.12.32 -m connmark --mark 1 -m length --length 160: -j CLASSIFY --set-class 1:537
+# host: jfk (link: dsl2)
+/sbin/iptables -t mangle -A POSTROUTING -o eth0 -d 10.0.12.32 -m connmark --mark 2 -m length --length :160 -j CLASSIFY --set-class 1:539
+/sbin/iptables -t mangle -A POSTROUTING -o eth0 -d 10.0.12.32 -m connmark --mark 2 -m length --length 160: -j CLASSIFY --set-class 1:540
+/sbin/iptables -t mangle -A POSTROUTING -o eth1 -d 10.0.12.32 -m connmark --mark 2 -m length --length :160 -j CLASSIFY --set-class 1:539
+/sbin/iptables -t mangle -A POSTROUTING -o eth1 -d 10.0.12.32 -m connmark --mark 2 -m length --length 160: -j CLASSIFY --set-class 1:540
+# host: joanna (link: dsl1)
+/sbin/iptables -t mangle -A POSTROUTING -o eth0 -d 10.0.32.7 -m connmark --mark 1 -m length --length :160 -j CLASSIFY --set-class 1:542
+/sbin/iptables -t mangle -A POSTROUTING -o eth0 -d 10.0.32.7 -m connmark --mark 1 -m length --length 160: -j CLASSIFY --set-class 1:543
+/sbin/iptables -t mangle -A POSTROUTING -o eth1 -d 10.0.32.7 -m connmark --mark 1 -m length --length :160 -j CLASSIFY --set-class 1:542
+/sbin/iptables -t mangle -A POSTROUTING -o eth1 -d 10.0.32.7 -m connmark --mark 1 -m length --length 160: -j CLASSIFY --set-class 1:543
+# host: joanna (link: dsl2)
+/sbin/iptables -t mangle -A POSTROUTING -o eth0 -d 10.0.32.7 -m connmark --mark 2 -m length --length :160 -j CLASSIFY --set-class 1:545
+/sbin/iptables -t mangle -A POSTROUTING -o eth0 -d 10.0.32.7 -m connmark --mark 2 -m length --length 160: -j CLASSIFY --set-class 1:546
+/sbin/iptables -t mangle -A POSTROUTING -o eth1 -d 10.0.32.7 -m connmark --mark 2 -m length --length :160 -j CLASSIFY --set-class 1:545
+/sbin/iptables -t mangle -A POSTROUTING -o eth1 -d 10.0.32.7 -m connmark --mark 2 -m length --length 160: -j CLASSIFY --set-class 1:546

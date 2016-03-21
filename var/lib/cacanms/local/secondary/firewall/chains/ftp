@@ -1,0 +1,4 @@
+$IPTABLES -t nat -N ftp
+$IPTABLES -t nat -A ftp -s $APOC_IP -j ACCEPT
+$IPTABLES -t nat -A ftp -j DROP
+

@@ -1,0 +1,35 @@
+;
+; BIND data file for "somelocalnetwork.lan" domain
+;
+$TTL    7200
+@       IN      SOA     somelocalnetwork.lan. root.somelocalnetwork.lan. (
+		 2005072301      ; Serial
+			14400      ; Refresh
+			3600      ; Retry
+			3628800      ; Expire
+			7200 )    ; Negative Cache TTL
+;
+@                               IN      NS      ns1.somelocalnetwork.lan.
+				IN      NS      ns2.somelocalnetwork.lan.
+				IN      NS      ns3.somelocalnetwork.lan.
+somelocalnetwork.lan.                   IN      MX      10 mail.somelocalnetwork.lan.
+*.somelocalnetwork.lan.                 IN      MX      10 mail.somelocalnetwork.lan.
+;
+somelocalnetwork.lan.                   IN      RP      someadmin.somelocalnetwork.lan. Firstname.Lastname.somelocalnetwork.lan.
+Firstname.Lastname.somelocalnetwork.lan.    IN      TXT     "Firstname Lastname, NIC handle: SOMENICHANDLE"
+;
+localhost.somelocalnetwork.lan.         IN      A       127.0.0.1
+;
+wpad				IN	A	10.0.16.4
+				IN      TXT     "service: wpad:http://wpad.somelocalnetwork.lan:80/proxy.pac"
+wpad.tcp        		IN      SRV     0 0 80 wpad.somelocalnetwork.lan.
+somelocalnetwork.lan.                      IN      A       10.0.16.4
+ns1                             IN      A       10.0.16.4
+ns2                             IN      A       10.0.56.31
+ns3                             IN      A       10.0.8.15
+irc                             IN      A       10.0.16.4
+mail                            IN      A       10.0.16.4
+ftp                             IN      A       10.0.16.4
+www                             IN      A       10.0.16.4
+;
+$include /etc/bind/db.somelocalnetwork.lan..inc

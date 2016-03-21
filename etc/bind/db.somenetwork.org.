@@ -1,0 +1,13 @@
+;
+; BIND data file for "somenetwork.org" domain
+;
+$TTL    7200
+@       IN      SOA     somenetwork.org. root.somenetwork.org. (
+                 2005072300      ; Serial
+		      14400      ; Refresh
+			3600     ; Retry
+                    3628800      ; Expire
+                       7200 )    ; Negative Cache TTL
+;
+@                               IN      NS      ns1.somenetwork.org.
+

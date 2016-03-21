@@ -1,0 +1,3 @@
+/sbin/iptables -t nat -N admin
+/sbin/iptables -t nat -A admin -s somehost.somewhere.org.  -j ACCEPT
+/sbin/iptables -t nat -A admin -j DROP

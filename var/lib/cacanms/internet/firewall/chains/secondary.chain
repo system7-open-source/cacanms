@@ -1,0 +1,3 @@
+/sbin/iptables -t nat -N secondary
+/sbin/iptables -t nat -A secondary -m mac -s 10.0.12.4/32 --mac-source 00:80:45:2A:14:A0  -j ACCEPT
+/sbin/iptables -t nat -A secondary -j DROP
