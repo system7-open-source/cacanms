@@ -1,12 +1,12 @@
 # vim begin
-  # temporary
-  .netrwhist
-  *~
-  # swap
-  [._]*.s[a-w][a-p]
-  [._]s[a-w][a-p]
-  # session
-  Session.vim
-  # auto-generated tag files
-  tags
+# temporary
+.netrwhist
+*~
+# swap
+[._]*.s[a-w][a-p]
+[._]s[a-w][a-p]
+# session
+Session.vim
+# auto-generated tag files
+tags
 # vim end
